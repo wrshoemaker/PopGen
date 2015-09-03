@@ -26,30 +26,26 @@ def ParseFASTA(fileFasta):
         else:
             current_dna[1] += line.rstrip('\n')
     fasta_list.append(current_dna)
-    if len(fasta_list) > 1:
-        return fasta_list
-    else:
-        fasta_list_flat = [item for sublist in fasta_list for item in sublist]
-        return fasta_list_flat
+    return fasta_list
 
 def seqType(fileFASTA):
     #setDNA = set('ACGT')
     #setRNA = set('ACGU')
     #setPep = set('ARNDCEQGHILKMFPSTWYV')
     fileParsed = readFASTA(fileFASTA)
-    justSeqs = fileParsed[1::2]
     seq_dict = {}
-    for x in justSeqs:
-        setX = set(str(x))
-        lenx = len(x)
-        letters = dict(collections.Counter(x))
-        letters.update((x, round((y/lenx),4)) for x, y in letters.items())
+    for x in fileParsed:
+        name = x[0]
+        setX = set(str(x[1]))
+        lenx = len(x[1])
+        letters = dict(collections.Counter(x[1]))
+        letters.update((y, round((z/lenx),4)) for y, z in letters.items())
         if len(setX) > 4:
-            print "Protein: " + str(letters)
+            print str(name) + " contains a protein sequence with the following AA frequencies: " + str(letters)
         elif len(setX) == 4 and 'U' in setX:
-            print "RNA: " + str(letters)
+            print str(name) + " contains RNA with the following nucleotide frequencies: " + str(letters)
         elif len(setX) == 4 and 'T' in setX:
-            print "DNA: " + str(letters)
+            print str(name) + " contains DNA with the following nucleotide frequencies: " + str(letters)
         else:
             print ("You either have a character that is not a nucleotide in "
             "your DNA or RNA, or a very peptide chain with little diversity")

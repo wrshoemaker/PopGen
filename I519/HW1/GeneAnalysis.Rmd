@@ -1,0 +1,104 @@
+---
+title: 'I519: Homework 1'
+author: "Will Shoemaker"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output: pdf_document
+geometry: margin=2.54cm
+---
+
+## Overview
+
+
+## Set working directory
+```{r}
+rm(list=ls()) 
+getwd() 
+setwd("~/github/PopGen/I519/HW1/") 
+```
+
+## Import packages
+```{r}
+library("quantmod")
+library("ggplot2")
+library("reshape2")
+library("wesanderson")
+library(data.table)
+
+```
+
+## Import the data and add headers
+```{r}
+draft <- read.table("./genesize-draft.txt",header=F) 
+complete <- read.table("./genesize-complete.txt",header=T) 
+
+colnames(draft) <- c("Strain", "Genes")
+colnames(complete) <- c("Strain", "Genes")
+
+```
+
+# Mean gene number
+```{r}
+mean(draft[,2])
+mean(complete[,2])
+```
+
+So the draft genomes have a mean gene number of ~2,679 and the complete genomes have a mean gene number of ~2522. Let's look if there's a significant difference. 
+
+## Examine the quantile-quantile plots for the samples
+First we make a Q-Q plot that examines both samples.
+
+```{r}
+qqplot(draft[,2], complete[,2])
+
+xlim = range(1800, draft)
+ylim = range(1800, complete)
+
+qqplot(draft[,2], complete[,2],
+xlim = ylim, ylim = ylim,
+xlab = "Draft Genomes",
+ylab = "Complete Genomes",
+main = "Gene Number")
+abline(a=0, b=1, lty="dotted")
+```
+
+Then we make a Q-Q plot for each sample that compares the theoretical quantiles with sample quantiles.
+
+```{r}
+qqnorm(draft[,2],
+main = "Gene number in draft genomes")
+qqline(draft[,2])
+qqnorm(complete[,2],
+main = "Gene number in complete genomes")
+qqline(complete[,2])
+```
+
+We see from above that there is a clear deviation from the theoretical expectation for each sample, suggesting that it would not be a good idea to assume normality. We can then proceed with a Wilcoxon rank-sum test.
+
+```{r}
+wilcox.test(draft[,2], complete[,2], alternative = c("two.sided"), paired = FALSE, conf.level = 0.95)
+```
+
+There is a significant difference in the number of genes between draft and complete genomes. 
+
+```{r}
+draft$Type <- rep("Draft",nrow(draft)) 
+complete$Type <- rep("Complete",nrow(complete)) 
+mergeData <- rbind(draft, complete)
+mergeData$logGenes <- log(mergeData[,2])
+class(mergeData)
+head(mergeData)
+```
+
+
+
+```{r}
+palette <- wes_palette(5, name = "FantasticFox", type = "discrete") 
+ggplot(mergeData, aes(x=Type, y=Genes, fill = Type)) +
+  geom_violin(trim=FALSE) + 
+  geom_boxplot(width=0.1) + 
+  scale_fill_manual(values=palette[-2]) + 
+  xlab("Genome Type") + 
+  scale_size_area("Genome Type") + 
+  ylab("Gene Number") + 
+  guides(fill=guide_legend(title=NULL))
+```

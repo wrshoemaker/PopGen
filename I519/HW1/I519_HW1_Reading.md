@@ -1,0 +1,4 @@
+# Paper Reading
+### Will Shoemaker
+
+In this article the author summarizes the growing field of microbial forensics. The field seems to have potential for very specific cases, such as the example discussed where you could determine whether or not an individual was at the scene of the crime, as an individual's bacterial community is absent from their home if they are gone for more than 72 hours. This has a lot of potential, but the field seems like it is in the early stages of development. There is often a lot of difficulty in replicating microbial studies based on 16s rRNA taxonomic barcoding, which could make the legalities an issue and falsely incriminate innocent people. 

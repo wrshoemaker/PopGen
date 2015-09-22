@@ -7,7 +7,7 @@ import math
 import random
 import os
 
-mydir = os.path.expanduser("~/github/PopGen/I519/HW2/")
+#mydir = os.path.expanduser("~/github/PopGen/I519/HW2/")
 
 def readFASTA(fileFASTA):
     '''Checks for fasta by file extension'''
@@ -72,6 +72,7 @@ def choose_by_weight(weights):
         rndm -= j
         if rndm < 0:
             return i
+
 def blocks(s, n):
     """Produce n-character chunks from s."""
     for start in range(0, len(s), n):
@@ -108,17 +109,15 @@ def rndmGenome(fileFASTA):
     letters_rndm.update((y, round((z/lenY),4)) for y, z in letters_rndm.items())
     letters_rndm = collections.OrderedDict(sorted(letters_rndm.items()))
     file_name = str(argv[1]).split('.')
-    OUT = open(mydir + file_name[0] +'_random.' + file_name[1],'w+')
+    #OUT = open(mydir + file_name[0] +'_random.' + file_name[1],'w+')
     fasta_header = ">" + file_name[0] +'_random'
-    print>> OUT, fasta_header
-    for block in blocks(gen_rndm, 80):
-        print>> OUT, block
+    #print>> OUT, fasta_header
+    #for block in blocks(gen_rndm, 80):
+    #    print>> OUT, block
     print "Your biological genome has relative nucleotide frequencies of:"
     print letters.items()
     print "Your random genome has relative nucleotide frequencies of:"
     print letters_rndm.items()
 
-#toy_list = [0.2,0.4,0.3,0.1]
-#print weighted_choice_sub(toy_list)
+
 rndmGenome(argv[1])
-#list_FASTA = seqType(argv[1])

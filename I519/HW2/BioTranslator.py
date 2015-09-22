@@ -55,24 +55,14 @@ def revcomp(seq):
     listRevComp = [compDict[base] for base in seq]
     return ''.join(listRevComp)
 
-my_dna = 'CTCGCCATTAACCGTTTCAGCCCCAGGTGCCTTTCTTGAGGC'
-
 def translateSeq(seq):
     seqRC = revcomp(seq)
     pass
 
-s_protein = ''
-all_tl = []
-#for i in range(1,4):
-    #all_tl.append(translate_dna_single(dna, frame))
-#    for j in range(i,len(my_dna)+i,3):
-#        if AAtable[my_dna[j:j+3]] != '*':
-#            s_protein += AAtable[my_dna[j:j+3]]
-#print s_protein
 def translate_codon(codon):
     return AAtable.get(codon.upper(), 'x')
 
-def split_into_codons(dna, frame):
+def split_seq_to_codons(dna, frame):
     codons = []
     for i in range(frame - 1, len(dna)-2, 3):
         codon = dna[i:i+3]
@@ -81,8 +71,8 @@ def split_into_codons(dna, frame):
 
 
 # a function to translate a dna sequence in a single frame
-def translate_dna_single(dna, frame=1):
-    codons = split_into_codons(dna, frame)
+def translate_dna_frame(dna, frame=1):
+    codons = split_seq_to_codons(dna, frame)
     amino_acids = ''
     for codon in codons:
         amino_acids = amino_acids + translate_codon(codon)
@@ -92,22 +82,26 @@ def translate_dna_single(dna, frame=1):
 def translate_dna(dna, reverseTL = False):
     all_translations = []
     for frame in range(1,4):
-        all_translations.append(translate_dna_single(dna, frame))
+        all_translations.append(translate_dna_frame(dna, frame))
     if reverseTL:
         dnaRC = revcomp(dna)
         for frame in range(1,4):
-            all_translations.append(translate_dna_single(dnaRC, frame))
+            all_translations.append(translate_dna_frame(dnaRC, frame))
     return all_translations
-
-# to do, change variable names, format translation
-
 
 
 def format_translation(dna):
-    what = translate_dna(my_dna, reverseTL=True)
-    print what[0]
-    print dna
-    print revcomp(dna)
+    dna = readFASTA(dna)
+    for x in dna:
+        single_seq = translate_dna(x[1], reverseTL=True)
+        print ">" + x[0]
+        print "DNA: " + x[1]
+        print ' +3:   ' + "  ".join(single_seq[2])
+        print ' +2:  ' + "  ".join(single_seq[1])
+        print ' +1: ' + "  ".join(single_seq[0])
+        print "   : " +revcomp(x[1])
+        print ' -1: ' + "  ".join(single_seq[3])
+        print ' -2:  ' + "  ".join(single_seq[4])
+        print ' -3:   ' + "  ".join(single_seq[5])
 
-
-print format_translation(my_dna)
+format_translation(argv[1])

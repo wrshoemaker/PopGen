@@ -5,6 +5,9 @@ from itertools import groupby
 import collections
 import math
 import random
+import os
+
+mydir = os.path.expanduser("~/github/PopGen/I519/HW2/")
 
 def readFASTA(fileFASTA):
     '''Checks for fasta by file extension'''
@@ -30,6 +33,7 @@ def ParseFASTA(fileFasta):
             current_dna[1] += line.rstrip('\n')
     fasta_list.append(current_dna)
     return fasta_list
+
 def seqType(fileFASTA):
     fileParsed = readFASTA(fileFASTA)
     seq_dict = {}
@@ -47,7 +51,7 @@ def seqType(fileFASTA):
             print str(name) + " contains DNA with the following nucleotide frequencies: " + str(letters)
         else:
             print ("You either have a character that is not a nucleotide in "
-            "your DNA or RNA, or a very peptide chain with little diversity")
+            "your DNA or RNA, or a peptide chain with very little diversity")
 
 # This function will take a dictionary
 def roll(massDist):
@@ -61,32 +65,60 @@ def roll(massDist):
         result+=1
 sampleMassDist = (0.2, 0.4, 0.3, 0.1)
 
-print roll(sampleMassDist)
+def choose_by_weight(weights):
+    weights = map(float, weights)
+    rndm = random.random() * sum(weights)
+    for i, j in enumerate(weights):
+        rndm -= j
+        if rndm < 0:
+            return i
+def blocks(s, n):
+    """Produce n-character chunks from s."""
+    for start in range(0, len(s), n):
+        yield s[start:start+n]
 
 def rndmGenome(fileFASTA):
     fileParsed = readFASTA(fileFASTA)
+    gen_ref = ''
     for x in fileParsed:
-        name = x[0]
-        setX = set(str(x[1]))
-        lenx = len(x[1])
-        letters = dict(collections.Counter(x[1]))
-        letters.update((y, round((z/lenx),4)) for y, z in letters.items())
-        letters = collections.OrderedDict(sorted(letters.items()))
-        print letters
-        print letters['A']
-        #''.join(random.choice('acgt') for x in range(10))
+        gen_ref += x[1]
+    setX = set(str(gen_ref))
+    lenX = len(gen_ref)
+    letters = dict(collections.Counter(gen_ref))
+    letters.update((y, round((z/lenX),4)) for y, z in letters.items())
+    letters = collections.OrderedDict(sorted(letters.items()))
+    nuc_freqs = [x[1] for x in letters.items()]
+    gen_rndm = ''
+    for i in range(0,lenX):
+        j = choose_by_weight(nuc_freqs)
+        if j == 0:
+            gen_rndm += 'A'
+        elif j == 1:
+            gen_rndm += 'C'
+        elif j == 2:
+            gen_rndm += 'G'
+        elif j == 3:
+            gen_rndm += 'T'
+        else:
+            print "You have a non-nucleotide character in the genome."
 
-    #print fileParsed[0]
-    #if len(fileParsed) > 1:
-    #    print "More than one sequence in FASTA file"
-    #else:
-    #    seq = fileParsed[0]
-        #name = x[0]
-        #setX = set(str(x[1]))
-        #lenx = len(x[1])
-        #letters = dict(collections.Counter(x[1]))
-        #letters.update((y, round((z/lenx),4)) for y, z in letters.items())
+    setY = set(str(gen_rndm))
+    lenY = len(gen_rndm)
+    letters_rndm = dict(collections.Counter(gen_rndm))
+    letters_rndm.update((y, round((z/lenY),4)) for y, z in letters_rndm.items())
+    letters_rndm = collections.OrderedDict(sorted(letters_rndm.items()))
+    file_name = str(argv[1]).split('.')
+    OUT = open(mydir + file_name[0] +'_random.' + file_name[1],'w+')
+    fasta_header = ">" + file_name[0] +'_random'
+    print>> OUT, fasta_header
+    for block in blocks(gen_rndm, 80):
+        print>> OUT, block
+    print "Your biological genome has relative nucleotide frequencies of:"
+    print letters.items()
+    print "Your random genome has relative nucleotide frequencies of:"
+    print letters_rndm.items()
 
-
-list_FASTA = rndmGenome(argv[1])
+#toy_list = [0.2,0.4,0.3,0.1]
+#print weighted_choice_sub(toy_list)
+rndmGenome(argv[1])
 #list_FASTA = seqType(argv[1])

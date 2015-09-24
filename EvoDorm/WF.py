@@ -1,59 +1,35 @@
-from __future__ import division
-from sys import argv
-from itertools import groupby
-import collections
-from collections import OrderedDict
-import math
-import random
+# packages
 import numpy as np
 import itertools
+import matplotlib.pyplot as plt
+import matplotlib as mpl
+import argparse
 
-#DNA = ''
-#DNA+=weightedchoice([("C", 10], ("G", 20), ("A", 40"), ("T", 30)])
-
+# global variables
+pop_size = 50
+seq_length = 100
 alphabet = ['A', 'T', 'G', 'C']
-pop_size = 100
-seq_length = 10
-base_haplotype = "AAAAAAAAAA"
+mutation_rate = 0.0001 # per gen per individual per site
+generations = 500
+dorm = False
+
+# population
+base_haplotype = ''.join(["A" for i in range(seq_length)])
 pop = {}
-pop["AAAAAAAAAA"] = 100
-#pop["AATTTAAAAA"] = 30
-#pop["AAATAAAAAA"] = 30
+pop[base_haplotype] = pop_size
+history = []
 
-
-
-mutation_rate = 0.005 # per gen per individual per site
-
-def gen_haplotype(length):
-    return ''.join(random.choice('ACTG') for x in range(length))
-
-def gen_population(popsize, genomesize):
-    popDict = {}
-    haplotype = gen_haplotype(genomesize)
-    popDict[haplotype] = popsize
-    return popDict
-
-#print gen_population(100,100)
-
+# mutation
 def get_mutation_count():
     mean = mutation_rate * pop_size * seq_length
     return np.random.poisson(mean)
 
-
 def get_random_haplotype():
-    haplotypes = pop.keys()
-    frequencies = [x/float(pop_size) for x in pop.values()]
-    total = sum(frequencies)
-    frequencies = [x / total for x in frequencies]
-    return np.random.choice(haplotypes, p=frequencies)
-
-check = get_random_haplotype()
-print check
-#site = np.random.randint(seq_length)
-#possible_mutations = list(alphabet)
-#possible_mutations.remove(check[site])
-
-#print possible_mutations
+	haplotypes = pop.keys()
+	frequencies = [x/float(pop_size) for x in pop.values()]
+	total = sum(frequencies)
+	frequencies = [x / total for x in frequencies]
+	return np.random.choice(haplotypes, p=frequencies)
 
 def get_mutant(haplotype):
     site = np.random.randint(seq_length)
@@ -62,9 +38,6 @@ def get_mutant(haplotype):
     mutation = np.random.choice(possible_mutations)
     new_haplotype = haplotype[:site] + mutation + haplotype[site+1:]
     return new_haplotype
-
-#test = get_random_haplotype()
-#print get_mutant(test)
 
 def mutation_event():
     haplotype = get_random_haplotype()
@@ -76,21 +49,18 @@ def mutation_event():
         else:
             pop[new_haplotype] = 1
 
-
 def mutation_step():
     mutation_count = get_mutation_count()
     for i in range(mutation_count):
         mutation_event()
-#print mutation_event()
-#print pop
-generations = 5
 
-
-# Adding genetic drift
+# genetic drift
 def get_offspring_counts():
-    haplotypes = pop.keys()
-    frequencies = [x/float(pop_size) for x in pop.values()]
-    return list(np.random.multinomial(pop_size, frequencies))
+	haplotypes = pop.keys()
+	frequencies = [x/float(pop_size) for x in pop.values()]
+	total = sum(frequencies)
+	frequencies = [x / total for x in frequencies]
+	return list(np.random.multinomial(pop_size, frequencies))
 
 def offspring_step():
     counts = get_offspring_counts()
@@ -100,32 +70,23 @@ def offspring_step():
         else:
             del pop[haplotype]
 
-# Combine
-
+# simulate
 def time_step():
-    mutation_step()
-    offspring_step()
+    if dorm == True:
+        mutation_step()
+    else:
+        mutation_step()
+        offspring_step()
 
-def simulate():
-    for i in range(generations):
-        time_step()
-simulate()
-
-print pop
-# Reord
-pop = {"AAAAAAAAAA": pop_size}
-history = []
-def simulate():
+def simulate(dorm):
     clone_pop = dict(pop)
     history.append(clone_pop)
     for i in range(generations):
         time_step()
         clone_pop = dict(pop)
         history.append(clone_pop)
-simulate()
-pop
 
-# Analyze trajectories
+# plot diversity
 def get_distance(seq_a, seq_b):
     diffs = 0
     length = len(seq_a)
@@ -134,8 +95,6 @@ def get_distance(seq_a, seq_b):
         if chr_a != chr_b:
             diffs += 1
     return diffs / float(length)
-
-get_distance("AAAAAAAAAA", "AAAAAAAAAB")
 
 def get_diversity(population):
     haplotypes = population.keys()
@@ -151,22 +110,18 @@ def get_diversity(population):
             diversity += frequency_pair * get_distance(haplotype_a, haplotype_b)
     return diversity
 
-get_diversity(pop)
-
 def get_diversity_trajectory():
     trajectory = [get_diversity(generation) for generation in history]
     return trajectory
 
-import matplotlib.pyplot as plt
-import matplotlib as mpl
-def diversity_plot():
+def diversity_plot(xlabel="generation"):
     mpl.rcParams['font.size']=14
     trajectory = get_diversity_trajectory()
     plt.plot(trajectory, "#447CCD")
     plt.ylabel("diversity")
-    plt.xlabel("generation")
+    plt.xlabel(xlabel)
 
-# Analyze and plot divergence
+# plot divergence
 def get_divergence(population):
     haplotypes = population.keys()
     divergence = 0
@@ -178,21 +133,22 @@ def get_divergence(population):
 def get_divergence_trajectory():
     trajectory = [get_divergence(generation) for generation in history]
     return trajectory
-def divergence_plot():
+
+def divergence_plot(xlabel="generation"):
     mpl.rcParams['font.size']=14
     trajectory = get_divergence_trajectory()
     plt.plot(trajectory, "#447CCD")
     plt.ylabel("divergence")
-    plt.xlabel("generation")
+    plt.xlabel(xlabel)
 
-# Plot haplotype trajectories
-
+# plot trajectories
 def get_frequency(haplotype, generation):
     pop_at_generation = history[generation]
     if haplotype in pop_at_generation:
         return pop_at_generation[haplotype]/float(pop_size)
     else:
         return 0
+
 def get_trajectory(haplotype):
     trajectory = [get_frequency(haplotype, gen) for gen in range(generations)]
     return trajectory
@@ -204,22 +160,17 @@ def get_all_haplotypes():
             haplotypes.add(haplotype)
     return haplotypes
 
-haplotypes = get_all_haplotypes()
-for haplotype in haplotypes:
-    plt.plot(get_trajectory(haplotype))
-plt.show()
-
 def stacked_trajectory_plot(xlabel="generation"):
-    mpl.rcParams['font.size']=18
-    haplotypes = get_all_haplotypes()
-    trajectories = [get_trajectory(haplotype) for haplotype in haplotypes]
-    plt.stackplot(range(generations), trajectories, colors=colors_lighter)
-    plt.ylim(0, 1)
-    plt.ylabel("frequency")
-    plt.xlabel(xlabel)
+	colors_lighter = ["#A567AF", "#8F69C1", "#8474D1", "#7F85DB", "#7F97DF", "#82A8DD", "#88B5D5", "#8FC0C9", "#97C8BC", "#A1CDAD", "#ACD1A0", "#B9D395", "#C6D38C", "#D3D285", "#DECE81", "#E8C77D", "#EDBB7A", "#EEAB77", "#ED9773", "#EA816F", "#E76B6B"]
+	mpl.rcParams['font.size']=18
+	haplotypes = get_all_haplotypes()
+	trajectories = [get_trajectory(haplotype) for haplotype in haplotypes]
+	plt.stackplot(range(generations), trajectories, colors=colors_lighter)
+	plt.ylim(0, 1)
+	plt.ylabel("frequency")
+	plt.xlabel(xlabel)
 
-# Plot SNP trajectories
-
+# plot snp trajectories
 def get_snp_frequency(site, generation):
     minor_allele_frequency = 0.0
     pop_at_generation = history[generation]
@@ -243,45 +194,52 @@ def get_all_snps():
                     snps.add(site)
     return snps
 
-
 def snp_trajectory_plot(xlabel="generation"):
-    mpl.rcParams['font.size']=18
-    snps = get_all_snps()
-    trajectories = [get_snp_trajectory(snp) for snp in snps]
-    data = []
-    for trajectory, color in itertools.izip(trajectories, itertools.cycle(colors)):
-        data.append(range(generations))
-        data.append(trajectory)
-        data.append(color)
-    plt.plot(*data)
-    plt.ylim(0, 1)
-    plt.ylabel("frequency")
-    plt.xlabel(xlabel)
+	colors = ["#781C86", "#571EA2", "#462EB9", "#3F47C9", "#3F63CF", "#447CCD", "#4C90C0", "#56A0AE", "#63AC9A", "#72B485", "#83BA70", "#96BD60", "#AABD52", "#BDBB48", "#CEB541", "#DCAB3C", "#E49938", "#E68133", "#E4632E", "#DF4327", "#DB2122"]
+	mpl.rcParams['font.size']=18
+	snps = get_all_snps()
+	trajectories = [get_snp_trajectory(snp) for snp in snps]
+	data = []
+	for trajectory, color in itertools.izip(trajectories, itertools.cycle(colors)):
+		data.append(range(generations))
+		data.append(trajectory)
+		data.append(color)
+	plt.plot(*data)
+	plt.ylim(0, 1)
+	plt.ylabel("frequency")
+	plt.xlabel(xlabel)
 
+if __name__=="__main__":
+	parser = argparse.ArgumentParser(description = "run wright-fisher simulation with mutation and genetic drift")
+	parser.add_argument('--pop_size', type = int, default = 50.0, help = "population size")
+	parser.add_argument('--mutation_rate', type = float, default = 0.0001, help = "mutation rate")
+	parser.add_argument('--seq_length', type = int, default = 100, help = "sequence length")
+	parser.add_argument('--generations', type = int, default = 500, help = "generations")
+	parser.add_argument('--summary', action = "store_true", default = False, help = "don't plot trajectories")
+    parser.add_argument('--dorm', action = "store_true", default = False, help = "Don't resample each generation")
 
-# Scale up
-pop_size = 50
-seq_length = 100
-generations = 500
-mutation_rate = 0.0001
+	params = parser.parse_args()
+	pop_size = params.pop_size
+	mutation_rate = params.mutation_rate
+	seq_length = params.seq_length
+	generations = params.generations
+    dorm = params.dorm
 
-seq_length * mutation_rate
+	simulate()
 
-2 * pop_size * seq_length * mutation_rate
-
-base_haplotype = ''.join(["A" for i in range(seq_length)])
-pop.clear()
-del history[:]
-pop[base_haplotype] = pop_size
-
-simulate()
-
-plt.figure(num=None, figsize=(14, 14), dpi=80, facecolor='w', edgecolor='k')
-plt.subplot2grid((3,2), (0,0), colspan=2)
-stacked_trajectory_plot(xlabel="")
-plt.subplot2grid((3,2), (1,0), colspan=2)
-snp_trajectory_plot(xlabel="")
-plt.subplot2grid((3,2), (2,0))
-diversity_plot()
-plt.subplot2grid((3,2), (2,1))
-divergence_plot()
+	plt.figure(num=None, figsize=(14, 10), dpi=80, facecolor='w', edgecolor='k')
+	if params.summary:
+		plt.subplot2grid((2,1), (0,0))
+		diversity_plot()
+		plt.subplot2grid((2,1), (1,0))
+		divergence_plot()
+	else:
+		plt.subplot2grid((3,2), (0,0), colspan=2)
+		stacked_trajectory_plot(xlabel="")
+		plt.subplot2grid((3,2), (1,0), colspan=2)
+		snp_trajectory_plot(xlabel="")
+		plt.subplot2grid((3,2), (2,0))
+		diversity_plot()
+		plt.subplot2grid((3,2), (2,1))
+		divergence_plot()
+	plt.show()

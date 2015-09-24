@@ -6,23 +6,23 @@ import collections
 import math
 from distutils.util import strtobool
 
-AAtable = {
-      'ATA':'I', 'ATC':'I', 'ATT':'I', 'ATG':'M',
-      'ACA':'T', 'ACC':'T', 'ACG':'T', 'ACT':'T',
-      'AAC':'N', 'AAT':'N', 'AAA':'K', 'AAG':'K',
-      'AGC':'S', 'AGT':'S', 'AGA':'R', 'AGG':'R',
-      'CTA':'L', 'CTC':'L', 'CTG':'L', 'CTT':'L',
-      'CCA':'P', 'CCC':'P', 'CCG':'P', 'CCT':'P',
-      'CAC':'H', 'CAT':'H', 'CAA':'Q', 'CAG':'Q',
-      'CGA':'R', 'CGC':'R', 'CGG':'R', 'CGT':'R',
-      'GTA':'V', 'GTC':'V', 'GTG':'V', 'GTT':'V',
-      'GCA':'A', 'GCC':'A', 'GCG':'A', 'GCT':'A',
-      'GAC':'D', 'GAT':'D', 'GAA':'E', 'GAG':'E',
-      'GGA':'G', 'GGC':'G', 'GGG':'G', 'GGT':'G',
-      'TCA':'S', 'TCC':'S', 'TCG':'S', 'TCT':'S',
-      'TTC':'F', 'TTT':'F', 'TTA':'L', 'TTG':'L',
-      'TAC':'Y', 'TAT':'Y', 'TAA':'*', 'TAG':'*',
-      'TGC':'C', 'TGT':'C', 'TGA':'*', 'TGG':'W'}
+#AAtable = {
+#      'ATA':'I', 'ATC':'I', 'ATT':'I', 'ATG':'M',
+#      'ACA':'T', 'ACC':'T', 'ACG':'T', 'ACT':'T',
+#      'AAC':'N', 'AAT':'N', 'AAA':'K', 'AAG':'K',
+#      'AGC':'S', 'AGT':'S', 'AGA':'R', 'AGG':'R',
+#      'CTA':'L', 'CTC':'L', 'CTG':'L', 'CTT':'L',
+#      'CCA':'P', 'CCC':'P', 'CCG':'P', 'CCT':'P',
+#      'CAC':'H', 'CAT':'H', 'CAA':'Q', 'CAG':'Q',
+#      'CGA':'R', 'CGC':'R', 'CGG':'R', 'CGT':'R',
+#      'GTA':'V', 'GTC':'V', 'GTG':'V', 'GTT':'V',
+#      'GCA':'A', 'GCC':'A', 'GCG':'A', 'GCT':'A',
+#      'GAC':'D', 'GAT':'D', 'GAA':'E', 'GAG':'E',
+#      'GGA':'G', 'GGC':'G', 'GGG':'G', 'GGT':'G',
+#      'TCA':'S', 'TCC':'S', 'TCG':'S', 'TCT':'S',
+#      'TTC':'F', 'TTT':'F', 'TTA':'L', 'TTG':'L',
+#      'TAC':'Y', 'TAT':'Y', 'TAA':'*', 'TAG':'*',
+#      'TGC':'C', 'TGT':'C', 'TGA':'*', 'TGG':'W'}
 
 def readFASTA(fileFASTA):
     '''Checks for fasta by file extension'''
@@ -59,7 +59,22 @@ def translateSeq(seq):
     seqRC = revcomp(seq)
     pass
 
+def import_aa_table():
+    table = {}
+    #data = [[item.strip() for item in line.rstrip('\r\n').split('= ', 1)[-1]] \
+    #    for line in open(argv[2])]
+    aa_list = [[item.strip() for item in line.rstrip('\r\n').split('= ', 1)[-1]] \
+        for line in open(argv[2])]
+    aa_list_zip = map(list, zip(*aa_list))
+    for x in aa_list_zip:
+         x[2:5] = [''.join(x[2:5])]
+         table[str(x[2])] = str(x[0])
+    #return aa_list_zip
+    return table
+
+
 def translate_codon(codon):
+    AAtable = import_aa_table()
     return AAtable.get(codon.upper(), 'x')
 
 def split_seq_to_codons(dna, frame):

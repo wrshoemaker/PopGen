@@ -1,0 +1,25 @@
+
+Protein parsimony algorithm, version 3.696
+
+
+
+One most parsimonious tree found:
+
+
+
+
+  +-----------hVps37A   
+  3  
+  !  +--------hTSG101   
+  +--4  
+     !  +-----hVps37C   
+     +--1  
+        !  +--hVps37D   
+        +--2  
+           +--hVps37B   
+
+  remember: (although rooted by outgroup) this is an unrooted tree!
+
+
+requires a total of   1790.000
+

@@ -72,15 +72,30 @@ def offspring_step():
 # simulate
 def time_step():
     mutation_step()
+    offspring_step()
+
+def time_step_no_sample():
+    mutation_step()
     #offspring_step()
 
+
 def simulate():
+    count = 0
     clone_pop = dict(pop)
     history.append(clone_pop)
     for i in range(generations):
-        time_step()
-        clone_pop = dict(pop)
-        history.append(clone_pop)
+        if i == 250:
+            time_step()
+            clone_pop = dict(pop)
+            history.append(clone_pop)
+        else:
+            time_step_no_sample()
+            clone_pop = dict(pop)
+            history.append(clone_pop)
+        #time_step()
+        #clone_pop = dict(pop)
+        #history.append(clone_pop)
+    count += 1
 
 # plot diversity
 def get_distance(seq_a, seq_b):

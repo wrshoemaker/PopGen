@@ -1,53 +1,52 @@
-### William Shoemaker GRFP proposal 2014 
-# Microbial seedbanks and their evolutionary implications
+### William Shoemaker GRFP proposal 2015 
 
-### Keywords: microbial seed-banks, experimental evolution, neutral theory
+# The evolutionary implications of microbial dormancy
+
+### Keywords: microbial seed-banks, experimental evolution, theoretical population genetics
 
 **Background:**
 
-Resource limitation is a critical driver of ecological and evolutionary processes in managed and natural ecosystems. When energy and nutrients are in limited supply, individuals are at risk of not being able to meet the basic metabolic requirements to sustain processes required for life. As a result, many organisms have evolved life-history strategies to deal with starvation. In terms of sheer numbers and their core role in regulating global biogeochemical cycles, the organisms with the most diverse life-history strategies are those of microorganisms. Despite this key role, growing evidence suggests that most microorganisms persist in low-resource environments by entering a reversible state of reduced metabolic activity (i.e. dormancy), forming seed-banks.
+Resource limitation is a critical driver of ecological and evolutionary processes in managed and natural ecosystems. When energy and nutrients are in limited supply, individuals are at risk of not being able to meet the minimum metabolic requirements to reproduce or sustain essential life-processes. As a result, many organisms have evolved life-history strategies to deal with resource limitation. In terms of sheer numbers and their central role in regulating global biogeochemical cycles, the organisms with the most diverse life-history strategies are those of microorganisms. Despite this key role, growing evidence suggests that most microorganisms are in low-resource environments and persist by entering a reversible state of reduced metabolic activity (i.e. dormancy), forming seed-banks that maintain genetic variation through time (1). 
 
-The primary function of dormancy is to reduce the risk of extinction during periods when conditions are suboptimal for growth. It is well established that microbial dormancy has strong effects on physiology and community structure. However, we do not know how dormancy and conditions of extreme resource limitation affect the molecular genetic structure of microbial populations.
-
-^ maybe replace the above paragraph with something about seed-banks? 
-
-**Evolution and dormancy** 
-
-In order to make predictions on how dormancy alters a population's evolutionary trajectory on the molecular level, it is useful to place it in a population genetic framework. A core feature 
-
-A recently developed dormancy model adapts a known ecological model and decomposes a microbial population into active and dormant components. (Blath et al., 2014; Jones & Lennon, 2010). This model has been 
-
-Start with wright-fisher, expand to two population model
-
-However, the only model that examines the impact of dormancy on a Wright-Fisher (should I take the model and add a mutation component)? 
-
-Given how central a role mutation has played in the debatees? on microbial populations entering a dormant state due to environmental stress, it is important to consider how mutation acts in a dormant population. 
-
-In an idealized Wright-Fisher population, genetic variation is . However, in a Wright-Fisher . Therefore, absent all other demographic factors that violate Wright-Fisher assumptions, the expected genetic diversity increases when a population enters dormancy. 
+The primary function of dormancy is to reduce the risk of population extinction when conditions are suboptimal for growth. It is well established that dormancy has strong effects on microbial physiology and community structure (2,4). While the evolutionary impact of dormancy has been assessed through recent advances in theoretical population genetics, no work has been done to test the long-term impact of dormancy on microbial evolution (3). Given that most microorganisms are in a dormant state and theory suggests dormancy having a strong impact on the evolutionary trajectory of a population, the **current lack of experimental work designed to merge natural observations and population genetic theory regarding dormancy represents a broad gap in our knowledge of microbial evolution.** 
 
 
-we would predict that the expected genetic diversity increases 
+1) Assess the evolutionary impact of dormancy through experiments that control for population demography.2) Use an organism that has population dynamics in nature indicative of dormancy.
+3) Merge data with insights from theoretical population genetics.
 
 **Hypotheses:**
 
-Our null expectation is that if a dormant population is identical to an actively reproducing population in all aspects excluding binary division, that the dormant population will have a higher level of  
-If a dormant population experiances a mutation
+An ideal microbial population of size $$N$$ undergoing mutation at rate $$\mu$$ has a level of genetic diversity equal to $$2N\mu$$, the rate at which it is lost being the inverse of the size of the population ($$1/N$$) if all individuals are replaced by their offspring in the next generation  (Fig.1a). If we relax our assumptions and say that the population is not producing offspring, meaning that all individuals persist through time, we see that genetic diversity increases at the rate at which mutation occurs (Fig. 1b). 
+Therefore, our central expectation is that a population with a pool of dormant individuals will accumulate genetic diversity more quickly than an active population, the rate of accumulation being proportional to the size of the dormant pool relative to the total size of the population. 
 
 **Study System:**
 
-To examine the evolutionary impact of the life-history strategy of dormancy I will be using an environmental isolate of *Janthinobacterium*, a genus that has been observed in nature to exhibit dynamics typical of a population with a seed-bank component(citation). Our research has shown that *Janthinobacterium* exhibits unique phenotypic transitions under conditions of starvation and harbors the dormancy-associated genes cstA, sspA, and sspB5 (5,6)
+To examine the evolutionary impact of dormancy, I will be using an environmental isolate of *Janthinobacterium*, a genus of $$\mathbf{\beta}$$-proteobacteria that has been observed in nature to exhibit dynamics typical of a population that is capable of entering dormancy(5). Our research has shown that *Janthinobacterium* exhibits unique phenotypic transitions under conditions of starvation and harbors the dormancy-associated genes cstA, sspA, and sspB5 (6). In addition, this strain is currently being used in a mutation accumulation experiment, providing a useful foundation for evolutionary inference. 
 
 **Proposed Research:**
 
+To ensure that dormancy is the only demography-altering process acting on the microbial populations, the experimental environment will remain in a steady-state using chemostats over the course of the experiment in M9 minimal media supplemented with 0.2% glucose. Through the use of standard culturing techniques, flow cytometry compensation beads, and the respiration-associated dye CTC (What was that dye mario was talking about?), the population size of a microbial culture can be estimated and partitioned into the metabolically active, dormant and actively dividing components. This information will  be used to adjust the chemostat dilution rate to manipulate the proportion of dormant cells across five orders of magnitude on a log <sub>10</sub> scale, while keeping a constant population size. Flow cytometry analyses are  currently being done through the IU Bloomington (IUB) Flow Cytometry Core Facility. Each dilution rate will have five experimental replicates. All lines will undergo pooled population sequencing using paired-end runs on an Illumina NextSeq 500 at the IUB Center for Genomics and Bioinformatics. Sequence analysis will be done using a maximum-likelihood framework to generate the site-frequency spectrum of each experimental unit. Population genetic and statistical analyses on the sequence and flow cytometry data will be done through pipelines written with the coding language Python. I will continue to use the Lennon Lab's data management policy in my research, which includes using Scholarly Data Archive for long-term data storage and version control for code development.
+
 **Anticipated Results:**
 
+Microbial populations that are mostly dormant are expected to have a higher level of genetic diversity than populations that are actively dividing in a steady-state system. However, there will likely be selective forces acting on populations in our experimental system, requiring the use of theoretical population genetics to infer the relative strength of adaptive and non-adaptive evolutionary forces. 
 
 **Intellectual Merit:**
 
-This study will merge recent developments in theoretical population genetics in a controlled environment designed to manipulate population demography. The evolutionary implications of dormancy has been well-understood in certain plants for many years. However, **dormancy has been long overlooked in microorganisms, a serious oversight given their capacity for rapid evolution and key role in the global biogeochemical cycle**
+This study will merge recent developments in theoretical population genetics in a controlled environment designed to manipulate population demography. The evolutionary implications of dormancy has been well-understood in certain plants for many years. However, **dormancy has long been overlooked in microorganisms, a significant oversight given their capacity for rapid evolution and central role in the global biogeochemical cycle**
 
 
 **Broader Impacts:**
+As part of my public outreach I will work with the WonderLab Museum of Science, Health and Technology to engage the public on microbiology and evolution? (bad sentence)  
+
+I will continue to disseminate my findings by making my code freely accessible through the public repository GitHub, publishing in open access journals, and presenting at academic conferences and public forums. I am currently mentoring an undergraduate and will continue to help them to develop their independent research.
+
+Fig. 1a)
+![Alt Text](MutDriftEq.png)
+
+Fig. 2b) 
+![Alt Text](MutDriftDorm.png)
+
 
 **Works Cited:**
 
@@ -55,10 +54,16 @@ This study will merge recent developments in theoretical population genetics in 
 
 2. Jones, S. E. & Lennon, J. T. Proc. Natl. Acad. Sci. U. S. A. 107, 5881–6 (2010).
 
-3. Blath et al., 2014
+3. Blath, J., Eldon, B., Kurt, N., & Wilke-berenguer, M. (2015). Genetic variability under the seed bank coalescent, 1–62.
 
-4. 
+4. Farrell, M. J., & Finkel, S. E. (2003). The Growth Advantage in Stationary-Phase Phenotype Conferred by rpoS Mutations Is Dependent on the pH and Nutrient Environment The Growth Advantage in Stationary-Phase Phenotype Conferred by rpoS Mutations Is Dependent on the pH and Nutrient Environment. doi:10.1128/JB.185.24.7044
 
-5. Haselkorn, R., Artur, L., Bataus, M., Batista, S. & Teno, C. Proc. Natl. Acad. Sci. U. S. A. 100, 11660–5 (2003).
+5. Alonso-SÃ¡ez, L., Zeder, M., Harding, T., Pernthaler, J., Lovejoy, C., Bertilsson, S., & PedrÃ3s-AliÃ3, C. (2014). Winter bloom of a rare betaproteobacterium in the Arctic Ocean. Frontiers in Microbiology, 5(August), 1–9. 
 
 6. Shoemaker, W. R., Muscarella, M. E., & Lennon, J. T.  Genome Announc 3, 10–11 (2015).
+
+7. Lynch, M., Bost, D., Wilson, S., Maruki, T. & Harrison, S. Genome Biol. Evol. 6, 1210–8 (2014).
+
+
+
+$$\huge \huge 2N\mu$$

@@ -10,7 +10,8 @@ def readFASTA(fileFASTA):
     '''Checks for fasta by file extension'''
     file_lower = fileFASTA.lower()
     '''Check for three most common fasta file extensions'''
-    if file_lower.endswith('.txt') or file_lower.endswith('.fa') or file_lower.endswith('.fasta'):
+    if file_lower.endswith('.txt') or file_lower.endswith('.fa') or \
+    file_lower.endswith('.fasta') or file_lower.endswith('.fna'):
         with open(fileFASTA, "r") as f:
             return ParseFASTA(f)
 
@@ -26,7 +27,8 @@ def ParseFASTA(fileFasta):
                 pass
             current_dna = [line.lstrip('>').rstrip('\n'),'']
         else:
-            current_dna[1] += line.rstrip('\n')
+            #current_dna[1] += line.rstrip('\n')
+            current_dna[1] += "".join(line.split())
     fasta_list.append(current_dna)
     return fasta_list
 
@@ -51,4 +53,8 @@ def seqType(fileFASTA):
 
 
 
+#list_FASTA = seqType(argv[1])
+
+#ParseFASTA(argv[1])
+#readFASTA(argv[1])
 list_FASTA = seqType(argv[1])

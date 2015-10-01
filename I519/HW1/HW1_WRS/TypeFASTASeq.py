@@ -26,7 +26,8 @@ def ParseFASTA(fileFasta):
                 pass
             current_dna = [line.lstrip('>').rstrip('\n'),'']
         else:
-            current_dna[1] += line.rstrip('\n')
+            #current_dna[1] += line.rstrip('\n')
+            current_dna[1] += "".join(line.split())
     fasta_list.append(current_dna)
     return fasta_list
 
@@ -51,4 +52,8 @@ def seqType(fileFASTA):
 
 
 
+#list_FASTA = seqType(argv[1])
+
+#ParseFASTA(argv[1])
+readFASTA(argv[1])
 list_FASTA = seqType(argv[1])

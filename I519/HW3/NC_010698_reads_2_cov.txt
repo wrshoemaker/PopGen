@@ -1,0 +1,12 @@
+>read_0
+CC
+>read_1
+AA
+>read_2
+CG
+>read_3
+GG
+>read_4
+TT
+>read_5
+CG

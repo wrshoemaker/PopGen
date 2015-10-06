@@ -1,25 +1,36 @@
 
-Protein parsimony algorithm, version 3.696
+Amino acid sequence Maximum Likelihood method, version 3.696
+
+Jones-Taylor-Thornton model of amino acid change
 
 
-
-One most parsimonious tree found:
-
-
-
-
-  +-----------hVps37A   
-  3  
-  !  +--------hTSG101   
-  +--4  
-     !  +-----hVps37C   
-     +--1  
-        !  +--hVps37D   
-        +--2  
-           +--hVps37B   
-
-  remember: (although rooted by outgroup) this is an unrooted tree!
+                                 +---------------------------hTSG101   
+     +---------------------------3  
+  +--2                           +--------hVps37A   
+  |  |  
+  |  +--hVps37C   
+  |  
+  1-----hVps37D   
+  |  
+  +----hVps37B   
 
 
-requires a total of   1790.000
+remember: this is an unrooted tree!
+
+Ln Likelihood = -4497.86530
+
+ Between        And            Length      Approx. Confidence Limits
+ -------        ---            ------      ------- ---------- ------
+
+     1          hVps37B           0.64844     (  0.48179,     0.81543) **
+     1             2              0.11363     (     zero,     0.27038)
+     2             3              3.69607     (  2.14334,     5.25389) **
+     3          hTSG101           3.69327     (  2.39479,     5.00282) **
+     3          hVps37A           1.25775     (  0.24569,     2.26753) **
+     2          hVps37C           0.45203     (  0.29136,     0.61271) **
+     1          hVps37D           0.83718     (  0.63676,     1.03760) **
+
+     *  = significantly positive, P < 0.05
+     ** = significantly positive, P < 0.01
+
 

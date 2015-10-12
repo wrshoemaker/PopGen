@@ -1,5 +1,5 @@
-Input seqs: seq1 (len=12); seq2 (len=12)
-Alignment length=13; identity=69.23%
-SSVWILHD-AGWS
-|.|| ||| |||.
-STVW-LHDNAGWT
+Input seqs: seq1 (len=104); seq2 (len=101)
+Alignment length=100; identity=95.0%
+MRFFSYLGLLLAGLTSLQGFSTDNLLEEELRYWCQYVKNCRFCWTCQDGLCKNKVLKDMSSVQEHSYPMEHCMIHRQCKYIRDGPIFQVECTMQTSDATH
+||||||||||||||||||||||||||||.||||||||||||.||||   |||||||||||||||||||||||||||||||||||||||||||||||||||
+MRFFSYLGLLLAGLTSLQGFSTDNLLEENLRYWCQYVKNCRLCWTC---LCKNKVLKDMSSVQEHSYPMEHCMIHRQCKYIRDGPIFQVECTMQTSDATH

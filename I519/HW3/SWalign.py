@@ -115,7 +115,7 @@ def SW_affine_gap(r1, r2, output_format, output_name, sigma, epsilon, B62):
                     (str(len(r1)), str(len(r2)))
     align_score_print = "Alignment length=" + str(alignment_length) + \
                 "; identity=" + str(round(identity_score, 2)) + "%"
-
+    print "Your best alignment score is " + str(max_score)
     print align_len_print
     print align_score_print
     print r1_with_indels_str

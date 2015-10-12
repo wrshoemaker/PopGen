@@ -4,6 +4,7 @@ from sys import argv, exit
 import random
 import os
 from pprint import pprint
+import math
 
 
 mydir = os.path.dirname(os.path.realpath(__file__))
@@ -38,7 +39,7 @@ def random_reads(genome, read_len, cov):
     genome_split = genome.split('.')
     read_len = int(read_len)
     cov = int(cov)
-    OUT = open(str(mydir) + "/" +  str(genome_split[0]) +'_'+ "reads_" + str(read_len) +'_' + 'cov' + '.txt','w+')
+    OUT = open(str(mydir) + "/" +  str(genome_split[0]) +'_'+ "reads_" + str(read_len) +'_' + 'cov_' + str(cov) + '.fna','w+')
     genomeParsed = readFASTA(genome)
     name = genomeParsed[0][0]
     just_genome = genomeParsed[0][1]
@@ -88,12 +89,14 @@ def random_reads(genome, read_len, cov):
     set_sites_covered = set.union(*sites_covered)
     sites_not_covered = genome_set - set_sites_covered
     not_covered_list = list(sites_not_covered)
+    poisson_coverage = round(math.exp(-cov), 4) * 100
     if len(not_covered_list) == 0:
         print "Every site is covered!"
     else:
         percent_not_covered = (len(not_covered_list)/genome_size) * 100
         print str(len(not_covered_list)) + " sites aren't covered"
         print str(round(percent_not_covered, 2)) + "% of the genome isn't covered."
+        print "The Poisson distribution estimates that %s percent of sites aren't covered" % poisson_coverage
         #print "The following sites aren't covered: "
         #print '[%s]' % ', '.join(map(str, not_covered_list))
 

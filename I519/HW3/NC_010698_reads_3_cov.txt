@@ -1,8 +1,0 @@
->read_0
-TTT
->read_1
-TTT
->read_2
-CGG
->read_3
-AAC

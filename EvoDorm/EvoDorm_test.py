@@ -8,8 +8,6 @@ import matplotlib as mpl
 import argparse
 from collections import Counter
 import random
-#from collections import defaultdict
-
 
 def generate_base_haplotype(seq_length):
     base_haplotype = ''.join(["A" for i in range(seq_length)])
@@ -52,7 +50,6 @@ def get_mutation_count(mutation_rate, active_size, seq_length):
 def get_random_haplotype(pop, sub_pop):
     # Need random haplotype for active only
     if sub_pop == 'Active':
-        #try:
         haplotypes = pop['Active'].keys()
         active_size_step = sum(pop['Active'].values())
         frequencies = [x/float(active_size_step) for x in pop['Active'].values()]
@@ -60,7 +57,6 @@ def get_random_haplotype(pop, sub_pop):
         frequencies = [x / total for x in frequencies]
         return np.random.choice(haplotypes, p=frequencies)
     elif sub_pop == 'Dormant':
-        #except KeyError:
         haplotypes = pop['Dormant'].keys()
         dormant_size_step = sum(pop['Dormant'].values())
         frequencies = [x/float(dormant_size_step) for x in pop['Dormant'].values()]
@@ -110,36 +106,66 @@ def offspring_step(pop, active_size):
             del pop['Active'][haplotype]
 
 
-def dormancy_step(pop, active_size, dormant_size, c):
+def dormancy_step(pop, active_size, dormant_size, c, gen_quality, LH_strat):
     if dormant_size <= 0:
         pass
     else:
         K = active_size / dormant_size
         dormancy_rate = int(round(c, 0))
         resuscitation_rate = int(round((K*c), 0))
-        for i in range(0, dormancy_rate):
-            new_haplotype = get_random_haplotype(pop, 'Active')
-            pop['Active'][new_haplotype] -= 1
-            if new_haplotype in pop['Dormant']:
-                pop['Dormant'][new_haplotype] += 1
-            else:
-                pop['Dormant'][new_haplotype] = 1
-        for i in range(0, resuscitation_rate):
-            new_haplotype = get_random_haplotype(pop, 'Dormant')
-            pop['Dormant'][new_haplotype] -= 1
-            if new_haplotype in pop['Active']:
-                pop['Active'][new_haplotype] += 1
-            else:
-                pop['Active'][new_haplotype] = 1
+        if LH_strat == 'W' or LH_strat == 'S':
+            for i in range(0, dormancy_rate):
+                new_haplotype = get_random_haplotype(pop, 'Active')
+                pop['Active'][new_haplotype] -= 1
+                if new_haplotype in pop['Dormant']:
+                    pop['Dormant'][new_haplotype] += 1
+                else:
+                    pop['Dormant'][new_haplotype] = 1
+            for i in range(0, resuscitation_rate):
+                new_haplotype = get_random_haplotype(pop, 'Dormant')
+                pop['Dormant'][new_haplotype] -= 1
+                if new_haplotype in pop['Active']:
+                    pop['Active'][new_haplotype] += 1
+                else:
+                    pop['Active'][new_haplotype] = 1
+        elif LH_strat == 'R':
+            if gen_quality == 'G':
+                for i in range(0, resuscitation_rate):
+                    new_haplotype = get_random_haplotype(pop, 'Dormant')
+                    pop['Dormant'][new_haplotype] -= 1
+                    if new_haplotype in pop['Active']:
+                        pop['Active'][new_haplotype] += 1
+                    else:
+                        pop['Active'][new_haplotype] = 1
+            elif gen_quality == 'B':
+                for i in range(0, dormancy_rate):
+                    new_haplotype = get_random_haplotype(pop, 'Active')
+                    pop['Active'][new_haplotype] -= 1
+                    if new_haplotype in pop['Dormant']:
+                        pop['Dormant'][new_haplotype] += 1
+                    else:
+                        pop['Dormant'][new_haplotype] = 1
 
 
-def time_step(pop, mutation_rate, seq_length, active_size, dormant_size, c, gen_quality):
-    #if gen_quality
-    mutation_step(pop, mutation_rate, active_size, seq_length)
-    offspring_step(pop, active_size)
-    dormancy_step(pop, active_size, dormant_size, c)
-
-
+def time_step(pop, mutation_rate, seq_length, active_size, dormant_size, c, gen_quality, LH_strat):
+    if LH_strat == 'W':
+        mutation_step(pop, mutation_rate, active_size, seq_length)
+        offspring_step(pop, active_size)
+        dormancy_step(pop, active_size, dormant_size, c, gen_quality, LH_strat)
+    elif LH_strat == 'S':
+        if gen_quality == 'G':
+            mutation_step(pop, mutation_rate, active_size, seq_length)
+            offspring_step(pop, active_size)
+            dormancy_step(pop, active_size, dormant_size, c, gen_quality, LH_strat)
+        elif gen_quality == 'B':
+            dormancy_step(pop, active_size, dormant_size, c, gen_quality, LH_strat)
+    elif LH_strat == 'R':
+        if gen_quality == 'G':
+            mutation_step(pop, mutation_rate, active_size, seq_length)
+            offspring_step(pop, active_size)
+            dormancy_step(pop, active_size, dormant_size, c, gen_quality, LH_strat)
+        elif gen_quality == 'B':
+            dormancy_step(pop, active_size, dormant_size, c, gen_quality, LH_strat)
 
 def merge_two_dicts(x, y):
     '''Given two dicts, merge them into a new dict as a shallow copy.'''
@@ -151,9 +177,9 @@ def merge_two_dicts(x, y):
     return z
 
 
-def simulate(pop, mutation_rate, generations, seq_length, active_size, dormant_size, c, life_history, good_freq):
+def simulate(pop, mutation_rate, generations, seq_length, active_size, dormant_size, c, history, LH_strat, good_freq):
     gen_list = good_bad_not_evil(generations, good_freq)
-    if life_history == True:
+    if history == True:
         history = []
         new_pop = []
         haplotypes_active = pop['Active']
@@ -161,7 +187,7 @@ def simulate(pop, mutation_rate, generations, seq_length, active_size, dormant_s
         pop_merged = merge_two_dicts(haplotypes_dormant, haplotypes_active)
         history.append(pop_merged)
         for i in range(generations):
-            time_step(pop, mutation_rate, seq_length, active_size, dormant_size, c, gen_quality)
+            time_step(pop, mutation_rate, seq_length, active_size, dormant_size, c)
             haplotypes_active = pop['Active']
             haplotypes_dormant = pop['Dormant']
             pop_merged = merge_two_dicts(haplotypes_dormant, haplotypes_active)
@@ -170,11 +196,23 @@ def simulate(pop, mutation_rate, generations, seq_length, active_size, dormant_s
     else:
         haplotypes_active = pop['Active']
         haplotypes_dormant = pop['Dormant']
-        #pop_merged = merge_two_dicts(haplotypes_dormant, haplotypes_active)
         for i in range(len(gen_list)):
             gen_quality = str(gen_list[i])
-            time_step(pop, mutation_rate, seq_length, active_size, dormant_size, c, gen_quality)
+            time_step(pop, mutation_rate, seq_length, active_size, dormant_size, c, gen_quality, LH_strat)
         return pop
+
+
+def simulate_last(pop, mutation_rate, generations, seq_length, active_size, dormant_size, c):
+    '''Accepts a nested dictioanry of active and dormant sub-pops containing  haplotypes and counts'''
+    haplotypes_active = pop['Active']
+    haplotypes_dormant = pop['Dormant']
+    pop_merged = merge_two_dicts(haplotypes_dormant, haplotypes_active)
+    #print old_pop
+    #print new_pop
+
+    for i in range(generations):
+        time_step(pop, mutation_rate, seq_length, active_size, dormant_size, c)
+    return pop
 
 
 # Genetic diversity parameters
@@ -301,11 +339,11 @@ def tajimas_theta(population):
         for j in range(0, i):
             #for j in range(haplotype_count):
             haplotype_b = haplotypes[j]
-            frequency_b = population[haplotype_b] / float(pop_size)
-            frequency_pair = frequency_a * frequency_b
-            diversity += frequency_pair * get_distance(haplotype_a, haplotype_b)
-            #diversity += (get_distance(haplotype_a, haplotype_b) * )
-    return diversity * 2
+            #frequency_b = population[haplotype_b] / float(pop_size)
+            #frequency_pair = frequency_a * frequency_b
+            #diversity += frequency_pair * get_distance(haplotype_a, haplotype_b)
+            diversity += (get_distance(haplotype_a, haplotype_b))
+    return (diversity * (2 / (pop_size * (pop_size-1))))
 
 #def zfsw_theta(pop):
 
@@ -323,12 +361,12 @@ def tajimas_D(population, seq_length):
     return D_T
 
 def fu_and_li_D(population, seq_length):
-    'Try it with folded SFS data?'
     pop_size = sum(population.values())
     theta = wattersons_theta(population, seq_length)
     a1_pop = a1(pop_size)
     S_n = theta * a1_pop
-    num = S_n - ( a1_pop * fu_and_li_theta(population, seq_length))
+
+    num = S_n - ( a1_pop * fu_and_li_theta(population, seq_length) )
     den = math.sqrt((uD(pop_size) * S_n) + (vD(pop_size) * (S_n ** 2)))
     return num / den
 

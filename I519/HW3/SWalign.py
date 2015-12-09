@@ -58,10 +58,10 @@ def SW_affine_gap(r1, r2, output_format, output_name, sigma, epsilon, B62):
     max_i, max_j = 0, 0
     for i in xrange(1, len(r1)+1):
         for j in xrange(1, len(r2)+1):
-            #d_mat[i][j] = max([d_mat[i-1][j] - epsilon, s_mat[i-1][j] - sigma])
-            #i_mat[i][j] = max([i_mat[i][j-1] - epsilon, s_mat[i][j-1] - sigma])
-            d_mat[i][j] = max([d_mat[i-1][j] - sigma, s_mat[i-1][j] - (sigma + epsilon)])
-            i_mat[i][j] = max([i_mat[i][j-1] - sigma, s_mat[i][j-1] - (sigma + epsilon)])
+            d_mat[i][j] = max([d_mat[i-1][j] - epsilon, s_mat[i-1][j] - sigma])
+            i_mat[i][j] = max([i_mat[i][j-1] - epsilon, s_mat[i][j-1] - sigma])
+            #d_mat[i][j] = max([d_mat[i-1][j] - sigma, s_mat[i-1][j] - (sigma + epsilon)])
+            #i_mat[i][j] = max([i_mat[i][j-1] - sigma, s_mat[i][j-1] - (sigma + epsilon)])
             s_mat_scores = [d_mat[i][j], s_mat[i-1][j-1] + B62[r1[i-1], r2[j-1]], i_mat[i][j], 0]
             s_mat[i][j] = max(s_mat_scores)
             traceback[i][j] = s_mat_scores.index(s_mat[i][j])

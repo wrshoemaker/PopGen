@@ -1,0 +1,13 @@
+---
+output: pdf_document
+fontsize: 6pt 
+geometry: margin=0.5in
+---
+
+|Protein Group  | Residue Indices	|Residues|	Mean Atomic Distance |	Members|
+|:--------:|:-----------------------:|---|---|---|
+| SYNCRIP |1 |	26, 154, 230, 260, 359, 482 |	N, S, S, L, S, E |	999.9	|6 |
+|A1CF| 1  |5, 164, 246, 328, 340, 573, 577 |	H, V, M, T, T, T, T	|999.9	|7|
+|A1CF|2	|39, 161, 284, 291, 411, 465, 496, 541, 550	|K, E, K, L, E, Q, S, P, A	|15.9173	|9|
+|A1CF|3	|49, 465, 541 |	A, Q, P	|999.9 |	3|
+|A1CF|4 |	164, 340, 498, 573, 577 |	V, T, F, T, T |	999.9	|5|

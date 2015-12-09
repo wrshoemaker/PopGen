@@ -1,0 +1,635 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<graph label="tep" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:cy="http://www.cytoscape.org" xmlns="http://www.cs.rpi.edu/XGMML"  directed="1">
+  <att name="documentVersion" value="1.1"/>
+  <att name="networkMetadata">
+    <rdf:RDF>
+      <rdf:Description rdf:about="http://www.cytoscape.org/">
+        <dc:type>Coevolution</dc:type>
+        <dc:description>N/A</dc:description>
+        <dc:identifier>N/A</dc:identifier>
+        <dc:date>2012-07-12 12:36:46</dc:date>
+        <dc:title>CAPS output</dc:title>
+        <dc:source>http://www.cytoscape.org/</dc:source>
+        <dc:format>Cytoscape-XGMML</dc:format>
+      </rdf:Description>
+    </rdf:RDF>
+  </att>
+  <att type="string" name="backgroundColor" value="#ccccff"/>
+  <att type="real" name="GRAPH_VIEW_ZOOM" value="0.7832167832167832"/>
+  <att type="real" name="GRAPH_VIEW_CENTER_X" value="0.0"/>
+  <att type="real" name="GRAPH_VIEW_CENTER_Y" value="80.0"/>
+  <att type="boolean" name="NODE_SIZE_LOCKED" value="true"/>
+  <att type="string" name="__layoutAlgorithm" value="force-directed" cy:hidden="true"/>
+<node label="T573" id="-141">
+<att type="integer" name="Degree" value="6"/>
+<att type="string" name="canonicalName" value="T573"/>
+<att type="string" name="vizmap:tep NODE_LABEL" value="T573"/>
+<graphics type="ELLIPSE" h="11" w="11" fill="#5EFB6E" width="1" outline="#666666" cy:nodeTransparency="1.0" cy:nodeLabelFont="SansSerif.bold-0-12" cy:nodeLabel="T573" cy:borderLineType="solid"/>
+</node>
+<node label="Y509" id="-76">
+<att type="integer" name="Degree" value="1"/>
+<att type="string" name="canonicalName" value="Y509"/>
+<att type="string" name="vizmap:tep NODE_LABEL" value="Y509"/>
+<graphics type="ELLIPSE" h="6" w="6" fill="#5EFB6E" width="1" outline="#666666" cy:nodeTransparency="1.0" cy:nodeLabelFont="SansSerif.bold-0-12" cy:nodeLabel="Y509" cy:borderLineType="solid"/>
+</node>
+<node label="H5" id="-13">
+<att type="integer" name="Degree" value="7"/>
+<att type="string" name="canonicalName" value="H5"/>
+<att type="string" name="vizmap:tep NODE_LABEL" value="H5"/>
+<graphics type="ELLIPSE" h="12" w="12" fill="#5EFB6E" width="1" outline="#666666" cy:nodeTransparency="1.0" cy:nodeLabelFont="SansSerif.bold-0-12" cy:nodeLabel="H5" cy:borderLineType="solid"/>
+</node>
+<node label="A363" id="-102">
+<att type="integer" name="Degree" value="1"/>
+<att type="string" name="canonicalName" value="A363"/>
+<att type="string" name="vizmap:tep NODE_LABEL" value="A363"/>
+<graphics type="ELLIPSE" h="6" w="6" fill="#5EFB6E" width="1" outline="#666666" cy:nodeTransparency="1.0" cy:nodeLabelFont="SansSerif.bold-0-12" cy:nodeLabel="A363" cy:borderLineType="solid"/>
+</node>
+<node label="K106" id="-39">
+<att type="integer" name="Degree" value="1"/>
+<att type="string" name="canonicalName" value="K106"/>
+<att type="string" name="vizmap:tep NODE_LABEL" value="K106"/>
+<graphics type="ELLIPSE" h="6" w="6" fill="#5EFB6E" width="1" outline="#666666" cy:nodeTransparency="1.0" cy:nodeLabelFont="SansSerif.bold-0-12" cy:nodeLabel="K106" cy:borderLineType="solid"/>
+</node>
+<node label="P428" id="-38">
+<att type="integer" name="Degree" value="1"/>
+<att type="string" name="canonicalName" value="P428"/>
+<att type="string" name="vizmap:tep NODE_LABEL" value="P428"/>
+<graphics type="ELLIPSE" h="6" w="6" fill="#5EFB6E" width="1" outline="#666666" cy:nodeTransparency="1.0" cy:nodeLabelFont="SansSerif.bold-0-12" cy:nodeLabel="P428" cy:borderLineType="solid"/>
+</node>
+<node label="T328" id="-107">
+<att type="integer" name="Degree" value="6"/>
+<att type="string" name="canonicalName" value="T328"/>
+<att type="string" name="vizmap:tep NODE_LABEL" value="T328"/>
+<graphics type="ELLIPSE" h="11" w="11" fill="#5EFB6E" width="1" outline="#666666" cy:nodeTransparency="1.0" cy:nodeLabelFont="SansSerif.bold-0-12" cy:nodeLabel="T328" cy:borderLineType="solid"/>
+</node>
+<node label="N253" id="-75">
+<att type="integer" name="Degree" value="1"/>
+<att type="string" name="canonicalName" value="N253"/>
+<att type="string" name="vizmap:tep NODE_LABEL" value="N253"/>
+<graphics type="ELLIPSE" h="6" w="6" fill="#5EFB6E" width="1" outline="#666666" cy:nodeTransparency="1.0" cy:nodeLabelFont="SansSerif.bold-0-12" cy:nodeLabel="N253" cy:borderLineType="solid"/>
+</node>
+<node label="A50" id="-37">
+<att type="integer" name="Degree" value="1"/>
+<att type="string" name="canonicalName" value="A50"/>
+<att type="string" name="vizmap:tep NODE_LABEL" value="A50"/>
+<graphics type="ELLIPSE" h="6" w="6" fill="#5EFB6E" width="1" outline="#666666" cy:nodeTransparency="1.0" cy:nodeLabelFont="SansSerif.bold-0-12" cy:nodeLabel="A50" cy:borderLineType="solid"/>
+</node>
+<node label="Q465" id="-129">
+<att type="integer" name="Degree" value="9"/>
+<att type="string" name="canonicalName" value="Q465"/>
+<att type="string" name="vizmap:tep NODE_LABEL" value="Q465"/>
+<graphics type="ELLIPSE" h="14" w="14" fill="#5EFB6E" width="1" outline="#666666" cy:nodeTransparency="1.0" cy:nodeLabelFont="SansSerif.bold-0-12" cy:nodeLabel="Q465" cy:borderLineType="solid"/>
+</node>
+<node label="V164" id="-65">
+<att type="integer" name="Degree" value="7"/>
+<att type="string" name="canonicalName" value="V164"/>
+<att type="string" name="vizmap:tep NODE_LABEL" value="V164"/>
+<graphics type="ELLIPSE" h="12" w="12" fill="#5EFB6E" width="1" outline="#666666" cy:nodeTransparency="1.0" cy:nodeLabelFont="SansSerif.bold-0-12" cy:nodeLabel="V164" cy:borderLineType="solid"/>
+</node>
+<node label="F498" id="-135">
+<att type="integer" name="Degree" value="3"/>
+<att type="string" name="canonicalName" value="F498"/>
+<att type="string" name="vizmap:tep NODE_LABEL" value="F498"/>
+<graphics type="ELLIPSE" h="8" w="8" fill="#5EFB6E" width="1" outline="#666666" cy:nodeTransparency="1.0" cy:nodeLabelFont="SansSerif.bold-0-12" cy:nodeLabel="F498" cy:borderLineType="solid"/>
+</node>
+<node label="K39" id="-29">
+<att type="integer" name="Degree" value="8"/>
+<att type="string" name="canonicalName" value="K39"/>
+<att type="string" name="vizmap:tep NODE_LABEL" value="K39"/>
+<graphics type="ELLIPSE" h="13" w="13" fill="#5EFB6E" width="1" outline="#666666" cy:nodeTransparency="1.0" cy:nodeLabelFont="SansSerif.bold-0-12" cy:nodeLabel="K39" cy:borderLineType="solid"/>
+</node>
+<node label="E161" id="-53">
+<att type="integer" name="Degree" value="8"/>
+<att type="string" name="canonicalName" value="E161"/>
+<att type="string" name="vizmap:tep NODE_LABEL" value="E161"/>
+<graphics type="ELLIPSE" h="13" w="13" fill="#5EFB6E" width="1" outline="#666666" cy:nodeTransparency="1.0" cy:nodeLabelFont="SansSerif.bold-0-12" cy:nodeLabel="E161" cy:borderLineType="solid"/>
+</node>
+<node label="S496" id="-133">
+<att type="integer" name="Degree" value="8"/>
+<att type="string" name="canonicalName" value="S496"/>
+<att type="string" name="vizmap:tep NODE_LABEL" value="S496"/>
+<graphics type="ELLIPSE" h="13" w="13" fill="#5EFB6E" width="1" outline="#666666" cy:nodeTransparency="1.0" cy:nodeLabelFont="SansSerif.bold-0-12" cy:nodeLabel="S496" cy:borderLineType="solid"/>
+</node>
+<node label="Q404" id="-80">
+<att type="integer" name="Degree" value="2"/>
+<att type="string" name="canonicalName" value="Q404"/>
+<att type="string" name="vizmap:tep NODE_LABEL" value="Q404"/>
+<graphics type="ELLIPSE" h="7" w="7" fill="#5EFB6E" width="1" outline="#666666" cy:nodeTransparency="1.0" cy:nodeLabelFont="SansSerif.bold-0-12" cy:nodeLabel="Q404" cy:borderLineType="solid"/>
+</node>
+<node label="T577" id="-142">
+<att type="integer" name="Degree" value="7"/>
+<att type="string" name="canonicalName" value="T577"/>
+<att type="string" name="vizmap:tep NODE_LABEL" value="T577"/>
+<graphics type="ELLIPSE" h="12" w="12" fill="#5EFB6E" width="1" outline="#666666" cy:nodeTransparency="1.0" cy:nodeLabelFont="SansSerif.bold-0-12" cy:nodeLabel="T577" cy:borderLineType="solid"/>
+</node>
+<node label="T566" id="-140">
+<att type="integer" name="Degree" value="1"/>
+<att type="string" name="canonicalName" value="T566"/>
+<att type="string" name="vizmap:tep NODE_LABEL" value="T566"/>
+<graphics type="ELLIPSE" h="6" w="6" fill="#5EFB6E" width="1" outline="#666666" cy:nodeTransparency="1.0" cy:nodeLabelFont="SansSerif.bold-0-12" cy:nodeLabel="T566" cy:borderLineType="solid"/>
+</node>
+<node label="T340" id="-113">
+<att type="integer" name="Degree" value="7"/>
+<att type="string" name="canonicalName" value="T340"/>
+<att type="string" name="vizmap:tep NODE_LABEL" value="T340"/>
+<graphics type="ELLIPSE" h="12" w="12" fill="#5EFB6E" width="1" outline="#666666" cy:nodeTransparency="1.0" cy:nodeLabelFont="SansSerif.bold-0-12" cy:nodeLabel="T340" cy:borderLineType="solid"/>
+</node>
+<node label="P541" id="-137">
+<att type="integer" name="Degree" value="9"/>
+<att type="string" name="canonicalName" value="P541"/>
+<att type="string" name="vizmap:tep NODE_LABEL" value="P541"/>
+<graphics type="ELLIPSE" h="14" w="14" fill="#5EFB6E" width="1" outline="#666666" cy:nodeTransparency="1.0" cy:nodeLabelFont="SansSerif.bold-0-12" cy:nodeLabel="P541" cy:borderLineType="solid"/>
+</node>
+<node label="N111" id="-40">
+<att type="integer" name="Degree" value="1"/>
+<att type="string" name="canonicalName" value="N111"/>
+<att type="string" name="vizmap:tep NODE_LABEL" value="N111"/>
+<graphics type="ELLIPSE" h="6" w="6" fill="#5EFB6E" width="1" outline="#666666" cy:nodeTransparency="1.0" cy:nodeLabelFont="SansSerif.bold-0-12" cy:nodeLabel="N111" cy:borderLineType="solid"/>
+</node>
+<node label="A49" id="-35">
+<att type="integer" name="Degree" value="3"/>
+<att type="string" name="canonicalName" value="A49"/>
+<att type="string" name="vizmap:tep NODE_LABEL" value="A49"/>
+<graphics type="ELLIPSE" h="8" w="8" fill="#5EFB6E" width="1" outline="#666666" cy:nodeTransparency="1.0" cy:nodeLabelFont="SansSerif.bold-0-12" cy:nodeLabel="A49" cy:borderLineType="solid"/>
+</node>
+<node label="L291" id="-99">
+<att type="integer" name="Degree" value="8"/>
+<att type="string" name="canonicalName" value="L291"/>
+<att type="string" name="vizmap:tep NODE_LABEL" value="L291"/>
+<graphics type="ELLIPSE" h="13" w="13" fill="#5EFB6E" width="1" outline="#666666" cy:nodeTransparency="1.0" cy:nodeLabelFont="SansSerif.bold-0-12" cy:nodeLabel="L291" cy:borderLineType="solid"/>
+</node>
+<node label="A550" id="-138">
+<att type="integer" name="Degree" value="8"/>
+<att type="string" name="canonicalName" value="A550"/>
+<att type="string" name="vizmap:tep NODE_LABEL" value="A550"/>
+<graphics type="ELLIPSE" h="13" w="13" fill="#5EFB6E" width="1" outline="#666666" cy:nodeTransparency="1.0" cy:nodeLabelFont="SansSerif.bold-0-12" cy:nodeLabel="A550" cy:borderLineType="solid"/>
+</node>
+<node label="I373" id="-115">
+<att type="integer" name="Degree" value="1"/>
+<att type="string" name="canonicalName" value="I373"/>
+<att type="string" name="vizmap:tep NODE_LABEL" value="I373"/>
+<graphics type="ELLIPSE" h="6" w="6" fill="#5EFB6E" width="1" outline="#666666" cy:nodeTransparency="1.0" cy:nodeLabelFont="SansSerif.bold-0-12" cy:nodeLabel="I373" cy:borderLineType="solid"/>
+</node>
+<node label="A543" id="-139">
+<att type="integer" name="Degree" value="1"/>
+<att type="string" name="canonicalName" value="A543"/>
+<att type="string" name="vizmap:tep NODE_LABEL" value="A543"/>
+<graphics type="ELLIPSE" h="6" w="6" fill="#5EFB6E" width="1" outline="#666666" cy:nodeTransparency="1.0" cy:nodeLabelFont="SansSerif.bold-0-12" cy:nodeLabel="A543" cy:borderLineType="solid"/>
+</node>
+<node label="D519" id="-116">
+<att type="integer" name="Degree" value="1"/>
+<att type="string" name="canonicalName" value="D519"/>
+<att type="string" name="vizmap:tep NODE_LABEL" value="D519"/>
+<graphics type="ELLIPSE" h="6" w="6" fill="#5EFB6E" width="1" outline="#666666" cy:nodeTransparency="1.0" cy:nodeLabelFont="SansSerif.bold-0-12" cy:nodeLabel="D519" cy:borderLineType="solid"/>
+</node>
+<node label="T321" id="-101">
+<att type="integer" name="Degree" value="1"/>
+<att type="string" name="canonicalName" value="T321"/>
+<att type="string" name="vizmap:tep NODE_LABEL" value="T321"/>
+<graphics type="ELLIPSE" h="6" w="6" fill="#5EFB6E" width="1" outline="#666666" cy:nodeTransparency="1.0" cy:nodeLabelFont="SansSerif.bold-0-12" cy:nodeLabel="T321" cy:borderLineType="solid"/>
+</node>
+<node label="M246" id="-73">
+<att type="integer" name="Degree" value="6"/>
+<att type="string" name="canonicalName" value="M246"/>
+<att type="string" name="vizmap:tep NODE_LABEL" value="M246"/>
+<graphics type="ELLIPSE" h="11" w="11" fill="#5EFB6E" width="1" outline="#666666" cy:nodeTransparency="1.0" cy:nodeLabelFont="SansSerif.bold-0-12" cy:nodeLabel="M246" cy:borderLineType="solid"/>
+</node>
+<node label="E411" id="-123">
+<att type="integer" name="Degree" value="9"/>
+<att type="string" name="canonicalName" value="E411"/>
+<att type="string" name="vizmap:tep NODE_LABEL" value="E411"/>
+<graphics type="ELLIPSE" h="14" w="14" fill="#5EFB6E" width="1" outline="#666666" cy:nodeTransparency="1.0" cy:nodeLabelFont="SansSerif.bold-0-12" cy:nodeLabel="E411" cy:borderLineType="solid"/>
+</node>
+<node label="K284" id="-89">
+<att type="integer" name="Degree" value="9"/>
+<att type="string" name="canonicalName" value="K284"/>
+<att type="string" name="vizmap:tep NODE_LABEL" value="K284"/>
+<graphics type="ELLIPSE" h="14" w="14" fill="#5EFB6E" width="1" outline="#666666" cy:nodeTransparency="1.0" cy:nodeLabelFont="SansSerif.bold-0-12" cy:nodeLabel="K284" cy:borderLineType="solid"/>
+</node>
+<edge label="T573 (coev) T577" source="-141" target="-142">
+<att type="real" name="Coev" value="1"/>
+<att type="string" name="canonicalName" value="T573 (coev) T577"/>
+<att type="string" name="coevion" value="coev" cy:editable="false"/>
+<graphics width="1" fill="#0000ff" cy:sourceArrow="0" cy:targetArrow="0" cy:sourceArrowColor="#000000" cy:targetArrowColor="#000000" cy:edgeLabelFont="Default-0-10" cy:edgeLabel="" cy:edgeLineType="SOLID" cy:curved="STRAIGHT_LINES"/>
+</edge>
+<edge label="H5 (coev) T573" source="-13" target="-141">
+<att type="real" name="Coev" value="0.999756"/>
+<att type="string" name="canonicalName" value="H5 (coev) T573"/>
+<att type="string" name="coevion" value="coev" cy:editable="false"/>
+<graphics width="1" fill="#0000ff" cy:sourceArrow="0" cy:targetArrow="0" cy:sourceArrowColor="#000000" cy:targetArrowColor="#000000" cy:edgeLabelFont="Default-0-10" cy:edgeLabel="" cy:edgeLineType="SOLID" cy:curved="STRAIGHT_LINES"/>
+</edge>
+<edge label="H5 (coev) T577" source="-13" target="-142">
+<att type="real" name="Coev" value="0.999756"/>
+<att type="string" name="canonicalName" value="H5 (coev) T577"/>
+<att type="string" name="coevion" value="coev" cy:editable="false"/>
+<graphics width="1" fill="#0000ff" cy:sourceArrow="0" cy:targetArrow="0" cy:sourceArrowColor="#000000" cy:targetArrowColor="#000000" cy:edgeLabelFont="Default-0-10" cy:edgeLabel="" cy:edgeLineType="SOLID" cy:curved="STRAIGHT_LINES"/>
+</edge>
+<edge label="H5 (coev) V164" source="-13" target="-65">
+<att type="real" name="Coev" value="0.999784"/>
+<att type="string" name="canonicalName" value="H5 (coev) V164"/>
+<att type="string" name="coevion" value="coev" cy:editable="false"/>
+<graphics width="1" fill="#0000ff" cy:sourceArrow="0" cy:targetArrow="0" cy:sourceArrowColor="#000000" cy:targetArrowColor="#000000" cy:edgeLabelFont="Default-0-10" cy:edgeLabel="" cy:edgeLineType="SOLID" cy:curved="STRAIGHT_LINES"/>
+</edge>
+<edge label="H5 (coev) T328" source="-13" target="-107">
+<att type="real" name="Coev" value="0.999756"/>
+<att type="string" name="canonicalName" value="H5 (coev) T328"/>
+<att type="string" name="coevion" value="coev" cy:editable="false"/>
+<graphics width="1" fill="#0000ff" cy:sourceArrow="0" cy:targetArrow="0" cy:sourceArrowColor="#000000" cy:targetArrowColor="#000000" cy:edgeLabelFont="Default-0-10" cy:edgeLabel="" cy:edgeLineType="SOLID" cy:curved="STRAIGHT_LINES"/>
+</edge>
+<edge label="H5 (coev) M246" source="-13" target="-73">
+<att type="real" name="Coev" value="0.99977"/>
+<att type="string" name="canonicalName" value="H5 (coev) M246"/>
+<att type="string" name="coevion" value="coev" cy:editable="false"/>
+<graphics width="1" fill="#0000ff" cy:sourceArrow="0" cy:targetArrow="0" cy:sourceArrowColor="#000000" cy:targetArrowColor="#000000" cy:edgeLabelFont="Default-0-10" cy:edgeLabel="" cy:edgeLineType="SOLID" cy:curved="STRAIGHT_LINES"/>
+</edge>
+<edge label="H5 (coev) E411" source="-13" target="-123">
+<att type="real" name="Coev" value="0.981753"/>
+<att type="string" name="canonicalName" value="H5 (coev) E411"/>
+<att type="string" name="coevion" value="coev" cy:editable="false"/>
+<graphics width="1" fill="#0000ff" cy:sourceArrow="0" cy:targetArrow="0" cy:sourceArrowColor="#000000" cy:targetArrowColor="#000000" cy:edgeLabelFont="Default-0-10" cy:edgeLabel="" cy:edgeLineType="SOLID" cy:curved="STRAIGHT_LINES"/>
+</edge>
+<edge label="H5 (coev) T340" source="-13" target="-113">
+<att type="real" name="Coev" value="0.999756"/>
+<att type="string" name="canonicalName" value="H5 (coev) T340"/>
+<att type="string" name="coevion" value="coev" cy:editable="false"/>
+<graphics width="1" fill="#0000ff" cy:sourceArrow="0" cy:targetArrow="0" cy:sourceArrowColor="#000000" cy:targetArrowColor="#000000" cy:edgeLabelFont="Default-0-10" cy:edgeLabel="" cy:edgeLineType="SOLID" cy:curved="STRAIGHT_LINES"/>
+</edge>
+<edge label="T328 (coev) T573" source="-107" target="-141">
+<att type="real" name="Coev" value="1"/>
+<att type="string" name="canonicalName" value="T328 (coev) T573"/>
+<att type="string" name="coevion" value="coev" cy:editable="false"/>
+<graphics width="1" fill="#0000ff" cy:sourceArrow="0" cy:targetArrow="0" cy:sourceArrowColor="#000000" cy:targetArrowColor="#000000" cy:edgeLabelFont="Default-0-10" cy:edgeLabel="" cy:edgeLineType="SOLID" cy:curved="STRAIGHT_LINES"/>
+</edge>
+<edge label="T328 (coev) T577" source="-107" target="-142">
+<att type="real" name="Coev" value="1"/>
+<att type="string" name="canonicalName" value="T328 (coev) T577"/>
+<att type="string" name="coevion" value="coev" cy:editable="false"/>
+<graphics width="1" fill="#0000ff" cy:sourceArrow="0" cy:targetArrow="0" cy:sourceArrowColor="#000000" cy:targetArrowColor="#000000" cy:edgeLabelFont="Default-0-10" cy:edgeLabel="" cy:edgeLineType="SOLID" cy:curved="STRAIGHT_LINES"/>
+</edge>
+<edge label="T328 (coev) T340" source="-107" target="-113">
+<att type="real" name="Coev" value="1"/>
+<att type="string" name="canonicalName" value="T328 (coev) T340"/>
+<att type="string" name="coevion" value="coev" cy:editable="false"/>
+<graphics width="1" fill="#0000ff" cy:sourceArrow="0" cy:targetArrow="0" cy:sourceArrowColor="#000000" cy:targetArrowColor="#000000" cy:edgeLabelFont="Default-0-10" cy:edgeLabel="" cy:edgeLineType="SOLID" cy:curved="STRAIGHT_LINES"/>
+</edge>
+<edge label="K106 (coev) N111" source="-39" target="-40">
+<att type="real" name="Coev" value="1"/>
+<att type="string" name="canonicalName" value="K106 (coev) N111"/>
+<att type="string" name="coevion" value="coev" cy:editable="false"/>
+<graphics width="1" fill="#0000ff" cy:sourceArrow="0" cy:targetArrow="0" cy:sourceArrowColor="#000000" cy:targetArrowColor="#000000" cy:edgeLabelFont="Default-0-10" cy:edgeLabel="" cy:edgeLineType="SOLID" cy:curved="STRAIGHT_LINES"/>
+</edge>
+<edge label="N253 (coev) Y509" source="-75" target="-76">
+<att type="real" name="Coev" value="1"/>
+<att type="string" name="canonicalName" value="N253 (coev) Y509"/>
+<att type="string" name="coevion" value="coev" cy:editable="false"/>
+<graphics width="1" fill="#0000ff" cy:sourceArrow="0" cy:targetArrow="0" cy:sourceArrowColor="#000000" cy:targetArrowColor="#000000" cy:edgeLabelFont="Default-0-10" cy:edgeLabel="" cy:edgeLineType="SOLID" cy:curved="STRAIGHT_LINES"/>
+</edge>
+<edge label="Q465 (coev) P541" source="-129" target="-137">
+<att type="real" name="Coev" value="0.99667"/>
+<att type="string" name="canonicalName" value="Q465 (coev) P541"/>
+<att type="string" name="coevion" value="coev" cy:editable="false"/>
+<graphics width="1" fill="#0000ff" cy:sourceArrow="0" cy:targetArrow="0" cy:sourceArrowColor="#000000" cy:targetArrowColor="#000000" cy:edgeLabelFont="Default-0-10" cy:edgeLabel="" cy:edgeLineType="SOLID" cy:curved="STRAIGHT_LINES"/>
+</edge>
+<edge label="Q465 (coev) A550" source="-129" target="-138">
+<att type="real" name="Coev" value="0.997811"/>
+<att type="string" name="canonicalName" value="Q465 (coev) A550"/>
+<att type="string" name="coevion" value="coev" cy:editable="false"/>
+<graphics width="1" fill="#0000ff" cy:sourceArrow="0" cy:targetArrow="0" cy:sourceArrowColor="#000000" cy:targetArrowColor="#000000" cy:edgeLabelFont="Default-0-10" cy:edgeLabel="" cy:edgeLineType="SOLID" cy:curved="STRAIGHT_LINES"/>
+</edge>
+<edge label="Q465 (coev) S496" source="-129" target="-133">
+<att type="real" name="Coev" value="0.931076"/>
+<att type="string" name="canonicalName" value="Q465 (coev) S496"/>
+<att type="string" name="coevion" value="coev" cy:editable="false"/>
+<graphics width="1" fill="#0000ff" cy:sourceArrow="0" cy:targetArrow="0" cy:sourceArrowColor="#000000" cy:targetArrowColor="#000000" cy:edgeLabelFont="Default-0-10" cy:edgeLabel="" cy:edgeLineType="SOLID" cy:curved="STRAIGHT_LINES"/>
+</edge>
+<edge label="A50 (coev) P428" source="-37" target="-38">
+<att type="real" name="Coev" value="0.96227"/>
+<att type="string" name="canonicalName" value="A50 (coev) P428"/>
+<att type="string" name="coevion" value="coev" cy:editable="false"/>
+<graphics width="1" fill="#0000ff" cy:sourceArrow="0" cy:targetArrow="0" cy:sourceArrowColor="#000000" cy:targetArrowColor="#000000" cy:edgeLabelFont="Default-0-10" cy:edgeLabel="" cy:edgeLineType="SOLID" cy:curved="STRAIGHT_LINES"/>
+</edge>
+<edge label="V164 (coev) T573" source="-65" target="-141">
+<att type="real" name="Coev" value="0.999996"/>
+<att type="string" name="canonicalName" value="V164 (coev) T573"/>
+<att type="string" name="coevion" value="coev" cy:editable="false"/>
+<graphics width="1" fill="#0000ff" cy:sourceArrow="0" cy:targetArrow="0" cy:sourceArrowColor="#000000" cy:targetArrowColor="#000000" cy:edgeLabelFont="Default-0-10" cy:edgeLabel="" cy:edgeLineType="SOLID" cy:curved="STRAIGHT_LINES"/>
+</edge>
+<edge label="V164 (coev) T577" source="-65" target="-142">
+<att type="real" name="Coev" value="0.999996"/>
+<att type="string" name="canonicalName" value="V164 (coev) T577"/>
+<att type="string" name="coevion" value="coev" cy:editable="false"/>
+<graphics width="1" fill="#0000ff" cy:sourceArrow="0" cy:targetArrow="0" cy:sourceArrowColor="#000000" cy:targetArrowColor="#000000" cy:edgeLabelFont="Default-0-10" cy:edgeLabel="" cy:edgeLineType="SOLID" cy:curved="STRAIGHT_LINES"/>
+</edge>
+<edge label="V164 (coev) F498" source="-65" target="-135">
+<att type="real" name="Coev" value="0.993362"/>
+<att type="string" name="canonicalName" value="V164 (coev) F498"/>
+<att type="string" name="coevion" value="coev" cy:editable="false"/>
+<graphics width="1" fill="#0000ff" cy:sourceArrow="0" cy:targetArrow="0" cy:sourceArrowColor="#000000" cy:targetArrowColor="#000000" cy:edgeLabelFont="Default-0-10" cy:edgeLabel="" cy:edgeLineType="SOLID" cy:curved="STRAIGHT_LINES"/>
+</edge>
+<edge label="V164 (coev) T328" source="-65" target="-107">
+<att type="real" name="Coev" value="0.999996"/>
+<att type="string" name="canonicalName" value="V164 (coev) T328"/>
+<att type="string" name="coevion" value="coev" cy:editable="false"/>
+<graphics width="1" fill="#0000ff" cy:sourceArrow="0" cy:targetArrow="0" cy:sourceArrowColor="#000000" cy:targetArrowColor="#000000" cy:edgeLabelFont="Default-0-10" cy:edgeLabel="" cy:edgeLineType="SOLID" cy:curved="STRAIGHT_LINES"/>
+</edge>
+<edge label="V164 (coev) M246" source="-65" target="-73">
+<att type="real" name="Coev" value="0.99999"/>
+<att type="string" name="canonicalName" value="V164 (coev) M246"/>
+<att type="string" name="coevion" value="coev" cy:editable="false"/>
+<graphics width="1" fill="#0000ff" cy:sourceArrow="0" cy:targetArrow="0" cy:sourceArrowColor="#000000" cy:targetArrowColor="#000000" cy:edgeLabelFont="Default-0-10" cy:edgeLabel="" cy:edgeLineType="SOLID" cy:curved="STRAIGHT_LINES"/>
+</edge>
+<edge label="V164 (coev) T340" source="-65" target="-113">
+<att type="real" name="Coev" value="0.999996"/>
+<att type="string" name="canonicalName" value="V164 (coev) T340"/>
+<att type="string" name="coevion" value="coev" cy:editable="false"/>
+<graphics width="1" fill="#0000ff" cy:sourceArrow="0" cy:targetArrow="0" cy:sourceArrowColor="#000000" cy:targetArrowColor="#000000" cy:edgeLabelFont="Default-0-10" cy:edgeLabel="" cy:edgeLineType="SOLID" cy:curved="STRAIGHT_LINES"/>
+</edge>
+<edge label="F498 (coev) T577" source="-135" target="-142">
+<att type="real" name="Coev" value="0.993241"/>
+<att type="string" name="canonicalName" value="F498 (coev) T577"/>
+<att type="string" name="coevion" value="coev" cy:editable="false"/>
+<graphics width="1" fill="#0000ff" cy:sourceArrow="0" cy:targetArrow="0" cy:sourceArrowColor="#000000" cy:targetArrowColor="#000000" cy:edgeLabelFont="Default-0-10" cy:edgeLabel="" cy:edgeLineType="SOLID" cy:curved="STRAIGHT_LINES"/>
+</edge>
+<edge label="K39 (coev) E161" source="-29" target="-53">
+<att type="real" name="Coev" value="0.995452"/>
+<att type="string" name="canonicalName" value="K39 (coev) E161"/>
+<att type="string" name="coevion" value="coev" cy:editable="false"/>
+<graphics width="1" fill="#0000ff" cy:sourceArrow="0" cy:targetArrow="0" cy:sourceArrowColor="#000000" cy:targetArrowColor="#000000" cy:edgeLabelFont="Default-0-10" cy:edgeLabel="" cy:edgeLineType="SOLID" cy:curved="STRAIGHT_LINES"/>
+</edge>
+<edge label="K39 (coev) S496" source="-29" target="-133">
+<att type="real" name="Coev" value="0.918541"/>
+<att type="string" name="canonicalName" value="K39 (coev) S496"/>
+<att type="string" name="coevion" value="coev" cy:editable="false"/>
+<graphics width="1" fill="#0000ff" cy:sourceArrow="0" cy:targetArrow="0" cy:sourceArrowColor="#000000" cy:targetArrowColor="#000000" cy:edgeLabelFont="Default-0-10" cy:edgeLabel="" cy:edgeLineType="SOLID" cy:curved="STRAIGHT_LINES"/>
+</edge>
+<edge label="K39 (coev) P541" source="-29" target="-137">
+<att type="real" name="Coev" value="0.998588"/>
+<att type="string" name="canonicalName" value="K39 (coev) P541"/>
+<att type="string" name="coevion" value="coev" cy:editable="false"/>
+<graphics width="1" fill="#0000ff" cy:sourceArrow="0" cy:targetArrow="0" cy:sourceArrowColor="#000000" cy:targetArrowColor="#000000" cy:edgeLabelFont="Default-0-10" cy:edgeLabel="" cy:edgeLineType="SOLID" cy:curved="STRAIGHT_LINES"/>
+</edge>
+<edge label="K39 (coev) L291" source="-29" target="-99">
+<att type="real" name="Coev" value="0.999456"/>
+<att type="string" name="canonicalName" value="K39 (coev) L291"/>
+<att type="string" name="coevion" value="coev" cy:editable="false"/>
+<graphics width="1" fill="#0000ff" cy:sourceArrow="0" cy:targetArrow="0" cy:sourceArrowColor="#000000" cy:targetArrowColor="#000000" cy:edgeLabelFont="Default-0-10" cy:edgeLabel="" cy:edgeLineType="SOLID" cy:curved="STRAIGHT_LINES"/>
+</edge>
+<edge label="K39 (coev) A550" source="-29" target="-138">
+<att type="real" name="Coev" value="0.99945"/>
+<att type="string" name="canonicalName" value="K39 (coev) A550"/>
+<att type="string" name="coevion" value="coev" cy:editable="false"/>
+<graphics width="1" fill="#0000ff" cy:sourceArrow="0" cy:targetArrow="0" cy:sourceArrowColor="#000000" cy:targetArrowColor="#000000" cy:edgeLabelFont="Default-0-10" cy:edgeLabel="" cy:edgeLineType="SOLID" cy:curved="STRAIGHT_LINES"/>
+</edge>
+<edge label="K39 (coev) Q465" source="-29" target="-129">
+<att type="real" name="Coev" value="0.999456"/>
+<att type="string" name="canonicalName" value="K39 (coev) Q465"/>
+<att type="string" name="coevion" value="coev" cy:editable="false"/>
+<graphics width="1" fill="#0000ff" cy:sourceArrow="0" cy:targetArrow="0" cy:sourceArrowColor="#000000" cy:targetArrowColor="#000000" cy:edgeLabelFont="Default-0-10" cy:edgeLabel="" cy:edgeLineType="SOLID" cy:curved="STRAIGHT_LINES"/>
+</edge>
+<edge label="K39 (coev) K284" source="-29" target="-89">
+<att type="real" name="Coev" value="0.999097"/>
+<att type="string" name="canonicalName" value="K39 (coev) K284"/>
+<att type="string" name="coevion" value="coev" cy:editable="false"/>
+<graphics width="1" fill="#0000ff" cy:sourceArrow="0" cy:targetArrow="0" cy:sourceArrowColor="#000000" cy:targetArrowColor="#000000" cy:edgeLabelFont="Default-0-10" cy:edgeLabel="" cy:edgeLineType="SOLID" cy:curved="STRAIGHT_LINES"/>
+</edge>
+<edge label="K39 (coev) E411" source="-29" target="-123">
+<att type="real" name="Coev" value="0.995452"/>
+<att type="string" name="canonicalName" value="K39 (coev) E411"/>
+<att type="string" name="coevion" value="coev" cy:editable="false"/>
+<graphics width="1" fill="#0000ff" cy:sourceArrow="0" cy:targetArrow="0" cy:sourceArrowColor="#000000" cy:targetArrowColor="#000000" cy:edgeLabelFont="Default-0-10" cy:edgeLabel="" cy:edgeLineType="SOLID" cy:curved="STRAIGHT_LINES"/>
+</edge>
+<edge label="E161 (coev) P541" source="-53" target="-137">
+<att type="real" name="Coev" value="0.9901"/>
+<att type="string" name="canonicalName" value="E161 (coev) P541"/>
+<att type="string" name="coevion" value="coev" cy:editable="false"/>
+<graphics width="1" fill="#0000ff" cy:sourceArrow="0" cy:targetArrow="0" cy:sourceArrowColor="#000000" cy:targetArrowColor="#000000" cy:edgeLabelFont="Default-0-10" cy:edgeLabel="" cy:edgeLineType="SOLID" cy:curved="STRAIGHT_LINES"/>
+</edge>
+<edge label="E161 (coev) A550" source="-53" target="-138">
+<att type="real" name="Coev" value="0.991744"/>
+<att type="string" name="canonicalName" value="E161 (coev) A550"/>
+<att type="string" name="coevion" value="coev" cy:editable="false"/>
+<graphics width="1" fill="#0000ff" cy:sourceArrow="0" cy:targetArrow="0" cy:sourceArrowColor="#000000" cy:targetArrowColor="#000000" cy:edgeLabelFont="Default-0-10" cy:edgeLabel="" cy:edgeLineType="SOLID" cy:curved="STRAIGHT_LINES"/>
+</edge>
+<edge label="E161 (coev) L291" source="-53" target="-99">
+<att type="real" name="Coev" value="0.998053"/>
+<att type="string" name="canonicalName" value="E161 (coev) L291"/>
+<att type="string" name="coevion" value="coev" cy:editable="false"/>
+<graphics width="1" fill="#0000ff" cy:sourceArrow="0" cy:targetArrow="0" cy:sourceArrowColor="#000000" cy:targetArrowColor="#000000" cy:edgeLabelFont="Default-0-10" cy:edgeLabel="" cy:edgeLineType="SOLID" cy:curved="STRAIGHT_LINES"/>
+</edge>
+<edge label="E161 (coev) S496" source="-53" target="-133">
+<att type="real" name="Coev" value="0.952017"/>
+<att type="string" name="canonicalName" value="E161 (coev) S496"/>
+<att type="string" name="coevion" value="coev" cy:editable="false"/>
+<graphics width="1" fill="#0000ff" cy:sourceArrow="0" cy:targetArrow="0" cy:sourceArrowColor="#000000" cy:targetArrowColor="#000000" cy:edgeLabelFont="Default-0-10" cy:edgeLabel="" cy:edgeLineType="SOLID" cy:curved="STRAIGHT_LINES"/>
+</edge>
+<edge label="E161 (coev) Q465" source="-53" target="-129">
+<att type="real" name="Coev" value="0.998052"/>
+<att type="string" name="canonicalName" value="E161 (coev) Q465"/>
+<att type="string" name="coevion" value="coev" cy:editable="false"/>
+<graphics width="1" fill="#0000ff" cy:sourceArrow="0" cy:targetArrow="0" cy:sourceArrowColor="#000000" cy:targetArrowColor="#000000" cy:edgeLabelFont="Default-0-10" cy:edgeLabel="" cy:edgeLineType="SOLID" cy:curved="STRAIGHT_LINES"/>
+</edge>
+<edge label="E161 (coev) E411" source="-53" target="-123">
+<att type="real" name="Coev" value="1"/>
+<att type="string" name="canonicalName" value="E161 (coev) E411"/>
+<att type="string" name="coevion" value="coev" cy:editable="false"/>
+<graphics width="1" fill="#0000ff" cy:sourceArrow="0" cy:targetArrow="0" cy:sourceArrowColor="#000000" cy:targetArrowColor="#000000" cy:edgeLabelFont="Default-0-10" cy:edgeLabel="" cy:edgeLineType="SOLID" cy:curved="STRAIGHT_LINES"/>
+</edge>
+<edge label="E161 (coev) K284" source="-53" target="-89">
+<att type="real" name="Coev" value="0.990506"/>
+<att type="string" name="canonicalName" value="E161 (coev) K284"/>
+<att type="string" name="coevion" value="coev" cy:editable="false"/>
+<graphics width="1" fill="#0000ff" cy:sourceArrow="0" cy:targetArrow="0" cy:sourceArrowColor="#000000" cy:targetArrowColor="#000000" cy:edgeLabelFont="Default-0-10" cy:edgeLabel="" cy:edgeLineType="SOLID" cy:curved="STRAIGHT_LINES"/>
+</edge>
+<edge label="S496 (coev) P541" source="-133" target="-137">
+<att type="real" name="Coev" value="0.901119"/>
+<att type="string" name="canonicalName" value="S496 (coev) P541"/>
+<att type="string" name="coevion" value="coev" cy:editable="false"/>
+<graphics width="1" fill="#0000ff" cy:sourceArrow="0" cy:targetArrow="0" cy:sourceArrowColor="#000000" cy:targetArrowColor="#000000" cy:edgeLabelFont="Default-0-10" cy:edgeLabel="" cy:edgeLineType="SOLID" cy:curved="STRAIGHT_LINES"/>
+</edge>
+<edge label="S496 (coev) A550" source="-133" target="-138">
+<att type="real" name="Coev" value="0.904931"/>
+<att type="string" name="canonicalName" value="S496 (coev) A550"/>
+<att type="string" name="coevion" value="coev" cy:editable="false"/>
+<graphics width="1" fill="#0000ff" cy:sourceArrow="0" cy:targetArrow="0" cy:sourceArrowColor="#000000" cy:targetArrowColor="#000000" cy:edgeLabelFont="Default-0-10" cy:edgeLabel="" cy:edgeLineType="SOLID" cy:curved="STRAIGHT_LINES"/>
+</edge>
+<edge label="T340 (coev) T573" source="-113" target="-141">
+<att type="real" name="Coev" value="1"/>
+<att type="string" name="canonicalName" value="T340 (coev) T573"/>
+<att type="string" name="coevion" value="coev" cy:editable="false"/>
+<graphics width="1" fill="#0000ff" cy:sourceArrow="0" cy:targetArrow="0" cy:sourceArrowColor="#000000" cy:targetArrowColor="#000000" cy:edgeLabelFont="Default-0-10" cy:edgeLabel="" cy:edgeLineType="SOLID" cy:curved="STRAIGHT_LINES"/>
+</edge>
+<edge label="T340 (coev) T577" source="-113" target="-142">
+<att type="real" name="Coev" value="1"/>
+<att type="string" name="canonicalName" value="T340 (coev) T577"/>
+<att type="string" name="coevion" value="coev" cy:editable="false"/>
+<graphics width="1" fill="#0000ff" cy:sourceArrow="0" cy:targetArrow="0" cy:sourceArrowColor="#000000" cy:targetArrowColor="#000000" cy:edgeLabelFont="Default-0-10" cy:edgeLabel="" cy:edgeLineType="SOLID" cy:curved="STRAIGHT_LINES"/>
+</edge>
+<edge label="T340 (coev) F498" source="-113" target="-135">
+<att type="real" name="Coev" value="0.993241"/>
+<att type="string" name="canonicalName" value="T340 (coev) F498"/>
+<att type="string" name="coevion" value="coev" cy:editable="false"/>
+<graphics width="1" fill="#0000ff" cy:sourceArrow="0" cy:targetArrow="0" cy:sourceArrowColor="#000000" cy:targetArrowColor="#000000" cy:edgeLabelFont="Default-0-10" cy:edgeLabel="" cy:edgeLineType="SOLID" cy:curved="STRAIGHT_LINES"/>
+</edge>
+<edge label="P541 (coev) A550" source="-137" target="-138">
+<att type="real" name="Coev" value="0.999434"/>
+<att type="string" name="canonicalName" value="P541 (coev) A550"/>
+<att type="string" name="coevion" value="coev" cy:editable="false"/>
+<graphics width="1" fill="#0000ff" cy:sourceArrow="0" cy:targetArrow="0" cy:sourceArrowColor="#000000" cy:targetArrowColor="#000000" cy:edgeLabelFont="Default-0-10" cy:edgeLabel="" cy:edgeLineType="SOLID" cy:curved="STRAIGHT_LINES"/>
+</edge>
+<edge label="A49 (coev) P541" source="-35" target="-137">
+<att type="real" name="Coev" value="0.896216"/>
+<att type="string" name="canonicalName" value="A49 (coev) P541"/>
+<att type="string" name="coevion" value="coev" cy:editable="false"/>
+<graphics width="1" fill="#0000ff" cy:sourceArrow="0" cy:targetArrow="0" cy:sourceArrowColor="#000000" cy:targetArrowColor="#000000" cy:edgeLabelFont="Default-0-10" cy:edgeLabel="" cy:edgeLineType="SOLID" cy:curved="STRAIGHT_LINES"/>
+</edge>
+<edge label="A49 (coev) Q404" source="-35" target="-80">
+<att type="real" name="Coev" value="0.899531"/>
+<att type="string" name="canonicalName" value="A49 (coev) Q404"/>
+<att type="string" name="coevion" value="coev" cy:editable="false"/>
+<graphics width="1" fill="#0000ff" cy:sourceArrow="0" cy:targetArrow="0" cy:sourceArrowColor="#000000" cy:targetArrowColor="#000000" cy:edgeLabelFont="Default-0-10" cy:edgeLabel="" cy:edgeLineType="SOLID" cy:curved="STRAIGHT_LINES"/>
+</edge>
+<edge label="A49 (coev) Q465" source="-35" target="-129">
+<att type="real" name="Coev" value="0.900668"/>
+<att type="string" name="canonicalName" value="A49 (coev) Q465"/>
+<att type="string" name="coevion" value="coev" cy:editable="false"/>
+<graphics width="1" fill="#0000ff" cy:sourceArrow="0" cy:targetArrow="0" cy:sourceArrowColor="#000000" cy:targetArrowColor="#000000" cy:edgeLabelFont="Default-0-10" cy:edgeLabel="" cy:edgeLineType="SOLID" cy:curved="STRAIGHT_LINES"/>
+</edge>
+<edge label="L291 (coev) P541" source="-99" target="-137">
+<att type="real" name="Coev" value="0.99667"/>
+<att type="string" name="canonicalName" value="L291 (coev) P541"/>
+<att type="string" name="coevion" value="coev" cy:editable="false"/>
+<graphics width="1" fill="#0000ff" cy:sourceArrow="0" cy:targetArrow="0" cy:sourceArrowColor="#000000" cy:targetArrowColor="#000000" cy:edgeLabelFont="Default-0-10" cy:edgeLabel="" cy:edgeLineType="SOLID" cy:curved="STRAIGHT_LINES"/>
+</edge>
+<edge label="L291 (coev) A550" source="-99" target="-138">
+<att type="real" name="Coev" value="0.997812"/>
+<att type="string" name="canonicalName" value="L291 (coev) A550"/>
+<att type="string" name="coevion" value="coev" cy:editable="false"/>
+<graphics width="1" fill="#0000ff" cy:sourceArrow="0" cy:targetArrow="0" cy:sourceArrowColor="#000000" cy:targetArrowColor="#000000" cy:edgeLabelFont="Default-0-10" cy:edgeLabel="" cy:edgeLineType="SOLID" cy:curved="STRAIGHT_LINES"/>
+</edge>
+<edge label="L291 (coev) S496" source="-99" target="-133">
+<att type="real" name="Coev" value="0.931075"/>
+<att type="string" name="canonicalName" value="L291 (coev) S496"/>
+<att type="string" name="coevion" value="coev" cy:editable="false"/>
+<graphics width="1" fill="#0000ff" cy:sourceArrow="0" cy:targetArrow="0" cy:sourceArrowColor="#000000" cy:targetArrowColor="#000000" cy:edgeLabelFont="Default-0-10" cy:edgeLabel="" cy:edgeLineType="SOLID" cy:curved="STRAIGHT_LINES"/>
+</edge>
+<edge label="L291 (coev) Q465" source="-99" target="-129">
+<att type="real" name="Coev" value="1"/>
+<att type="string" name="canonicalName" value="L291 (coev) Q465"/>
+<att type="string" name="coevion" value="coev" cy:editable="false"/>
+<graphics width="1" fill="#0000ff" cy:sourceArrow="0" cy:targetArrow="0" cy:sourceArrowColor="#000000" cy:targetArrowColor="#000000" cy:edgeLabelFont="Default-0-10" cy:edgeLabel="" cy:edgeLineType="SOLID" cy:curved="STRAIGHT_LINES"/>
+</edge>
+<edge label="L291 (coev) E411" source="-99" target="-123">
+<att type="real" name="Coev" value="0.998053"/>
+<att type="string" name="canonicalName" value="L291 (coev) E411"/>
+<att type="string" name="coevion" value="coev" cy:editable="false"/>
+<graphics width="1" fill="#0000ff" cy:sourceArrow="0" cy:targetArrow="0" cy:sourceArrowColor="#000000" cy:targetArrowColor="#000000" cy:edgeLabelFont="Default-0-10" cy:edgeLabel="" cy:edgeLineType="SOLID" cy:curved="STRAIGHT_LINES"/>
+</edge>
+<edge label="I373 (coev) D519" source="-115" target="-116">
+<att type="real" name="Coev" value="0.999904"/>
+<att type="string" name="canonicalName" value="I373 (coev) D519"/>
+<att type="string" name="coevion" value="coev" cy:editable="false"/>
+<graphics width="1" fill="#0000ff" cy:sourceArrow="0" cy:targetArrow="0" cy:sourceArrowColor="#000000" cy:targetArrowColor="#000000" cy:edgeLabelFont="Default-0-10" cy:edgeLabel="" cy:edgeLineType="SOLID" cy:curved="STRAIGHT_LINES"/>
+</edge>
+<edge label="A543 (coev) T566" source="-139" target="-140">
+<att type="real" name="Coev" value="0.974305"/>
+<att type="string" name="canonicalName" value="A543 (coev) T566"/>
+<att type="string" name="coevion" value="coev" cy:editable="false"/>
+<graphics width="1" fill="#0000ff" cy:sourceArrow="0" cy:targetArrow="0" cy:sourceArrowColor="#000000" cy:targetArrowColor="#000000" cy:edgeLabelFont="Default-0-10" cy:edgeLabel="" cy:edgeLineType="SOLID" cy:curved="STRAIGHT_LINES"/>
+</edge>
+<edge label="M246 (coev) T573" source="-73" target="-141">
+<att type="real" name="Coev" value="0.999997"/>
+<att type="string" name="canonicalName" value="M246 (coev) T573"/>
+<att type="string" name="coevion" value="coev" cy:editable="false"/>
+<graphics width="1" fill="#0000ff" cy:sourceArrow="0" cy:targetArrow="0" cy:sourceArrowColor="#000000" cy:targetArrowColor="#000000" cy:edgeLabelFont="Default-0-10" cy:edgeLabel="" cy:edgeLineType="SOLID" cy:curved="STRAIGHT_LINES"/>
+</edge>
+<edge label="M246 (coev) T577" source="-73" target="-142">
+<att type="real" name="Coev" value="0.999997"/>
+<att type="string" name="canonicalName" value="M246 (coev) T577"/>
+<att type="string" name="coevion" value="coev" cy:editable="false"/>
+<graphics width="1" fill="#0000ff" cy:sourceArrow="0" cy:targetArrow="0" cy:sourceArrowColor="#000000" cy:targetArrowColor="#000000" cy:edgeLabelFont="Default-0-10" cy:edgeLabel="" cy:edgeLineType="SOLID" cy:curved="STRAIGHT_LINES"/>
+</edge>
+<edge label="M246 (coev) T328" source="-73" target="-107">
+<att type="real" name="Coev" value="0.999997"/>
+<att type="string" name="canonicalName" value="M246 (coev) T328"/>
+<att type="string" name="coevion" value="coev" cy:editable="false"/>
+<graphics width="1" fill="#0000ff" cy:sourceArrow="0" cy:targetArrow="0" cy:sourceArrowColor="#000000" cy:targetArrowColor="#000000" cy:edgeLabelFont="Default-0-10" cy:edgeLabel="" cy:edgeLineType="SOLID" cy:curved="STRAIGHT_LINES"/>
+</edge>
+<edge label="M246 (coev) T340" source="-73" target="-113">
+<att type="real" name="Coev" value="0.999997"/>
+<att type="string" name="canonicalName" value="M246 (coev) T340"/>
+<att type="string" name="coevion" value="coev" cy:editable="false"/>
+<graphics width="1" fill="#0000ff" cy:sourceArrow="0" cy:targetArrow="0" cy:sourceArrowColor="#000000" cy:targetArrowColor="#000000" cy:edgeLabelFont="Default-0-10" cy:edgeLabel="" cy:edgeLineType="SOLID" cy:curved="STRAIGHT_LINES"/>
+</edge>
+<edge label="T321 (coev) A363" source="-101" target="-102">
+<att type="real" name="Coev" value="0.923138"/>
+<att type="string" name="canonicalName" value="T321 (coev) A363"/>
+<att type="string" name="coevion" value="coev" cy:editable="false"/>
+<graphics width="1" fill="#0000ff" cy:sourceArrow="0" cy:targetArrow="0" cy:sourceArrowColor="#000000" cy:targetArrowColor="#000000" cy:edgeLabelFont="Default-0-10" cy:edgeLabel="" cy:edgeLineType="SOLID" cy:curved="STRAIGHT_LINES"/>
+</edge>
+<edge label="K284 (coev) P541" source="-89" target="-137">
+<att type="real" name="Coev" value="0.999478"/>
+<att type="string" name="canonicalName" value="K284 (coev) P541"/>
+<att type="string" name="coevion" value="coev" cy:editable="false"/>
+<graphics width="1" fill="#0000ff" cy:sourceArrow="0" cy:targetArrow="0" cy:sourceArrowColor="#000000" cy:targetArrowColor="#000000" cy:edgeLabelFont="Default-0-10" cy:edgeLabel="" cy:edgeLineType="SOLID" cy:curved="STRAIGHT_LINES"/>
+</edge>
+<edge label="K284 (coev) A550" source="-89" target="-138">
+<att type="real" name="Coev" value="0.999956"/>
+<att type="string" name="canonicalName" value="K284 (coev) A550"/>
+<att type="string" name="coevion" value="coev" cy:editable="false"/>
+<graphics width="1" fill="#0000ff" cy:sourceArrow="0" cy:targetArrow="0" cy:sourceArrowColor="#000000" cy:targetArrowColor="#000000" cy:edgeLabelFont="Default-0-10" cy:edgeLabel="" cy:edgeLineType="SOLID" cy:curved="STRAIGHT_LINES"/>
+</edge>
+<edge label="K284 (coev) L291" source="-89" target="-99">
+<att type="real" name="Coev" value="0.997152"/>
+<att type="string" name="canonicalName" value="K284 (coev) L291"/>
+<att type="string" name="coevion" value="coev" cy:editable="false"/>
+<graphics width="1" fill="#0000ff" cy:sourceArrow="0" cy:targetArrow="0" cy:sourceArrowColor="#000000" cy:targetArrowColor="#000000" cy:edgeLabelFont="Default-0-10" cy:edgeLabel="" cy:edgeLineType="SOLID" cy:curved="STRAIGHT_LINES"/>
+</edge>
+<edge label="K284 (coev) S496" source="-89" target="-133">
+<att type="real" name="Coev" value="0.900927"/>
+<att type="string" name="canonicalName" value="K284 (coev) S496"/>
+<att type="string" name="coevion" value="coev" cy:editable="false"/>
+<graphics width="1" fill="#0000ff" cy:sourceArrow="0" cy:targetArrow="0" cy:sourceArrowColor="#000000" cy:targetArrowColor="#000000" cy:edgeLabelFont="Default-0-10" cy:edgeLabel="" cy:edgeLineType="SOLID" cy:curved="STRAIGHT_LINES"/>
+</edge>
+<edge label="K284 (coev) Q404" source="-89" target="-80">
+<att type="real" name="Coev" value="0.837411"/>
+<att type="string" name="canonicalName" value="K284 (coev) Q404"/>
+<att type="string" name="coevion" value="coev" cy:editable="false"/>
+<graphics width="1" fill="#0000ff" cy:sourceArrow="0" cy:targetArrow="0" cy:sourceArrowColor="#000000" cy:targetArrowColor="#000000" cy:edgeLabelFont="Default-0-10" cy:edgeLabel="" cy:edgeLineType="SOLID" cy:curved="STRAIGHT_LINES"/>
+</edge>
+<edge label="K284 (coev) Q465" source="-89" target="-129">
+<att type="real" name="Coev" value="0.997151"/>
+<att type="string" name="canonicalName" value="K284 (coev) Q465"/>
+<att type="string" name="coevion" value="coev" cy:editable="false"/>
+<graphics width="1" fill="#0000ff" cy:sourceArrow="0" cy:targetArrow="0" cy:sourceArrowColor="#000000" cy:targetArrowColor="#000000" cy:edgeLabelFont="Default-0-10" cy:edgeLabel="" cy:edgeLineType="SOLID" cy:curved="STRAIGHT_LINES"/>
+</edge>
+<edge label="K284 (coev) E411" source="-89" target="-123">
+<att type="real" name="Coev" value="0.990506"/>
+<att type="string" name="canonicalName" value="K284 (coev) E411"/>
+<att type="string" name="coevion" value="coev" cy:editable="false"/>
+<graphics width="1" fill="#0000ff" cy:sourceArrow="0" cy:targetArrow="0" cy:sourceArrowColor="#000000" cy:targetArrowColor="#000000" cy:edgeLabelFont="Default-0-10" cy:edgeLabel="" cy:edgeLineType="SOLID" cy:curved="STRAIGHT_LINES"/>
+</edge>
+<edge label="E411 (coev) P541" source="-123" target="-137">
+<att type="real" name="Coev" value="0.9901"/>
+<att type="string" name="canonicalName" value="E411 (coev) P541"/>
+<att type="string" name="coevion" value="coev" cy:editable="false"/>
+<graphics width="1" fill="#0000ff" cy:sourceArrow="0" cy:targetArrow="0" cy:sourceArrowColor="#000000" cy:targetArrowColor="#000000" cy:edgeLabelFont="Default-0-10" cy:edgeLabel="" cy:edgeLineType="SOLID" cy:curved="STRAIGHT_LINES"/>
+</edge>
+<edge label="E411 (coev) A550" source="-123" target="-138">
+<att type="real" name="Coev" value="0.991744"/>
+<att type="string" name="canonicalName" value="E411 (coev) A550"/>
+<att type="string" name="coevion" value="coev" cy:editable="false"/>
+<graphics width="1" fill="#0000ff" cy:sourceArrow="0" cy:targetArrow="0" cy:sourceArrowColor="#000000" cy:targetArrowColor="#000000" cy:edgeLabelFont="Default-0-10" cy:edgeLabel="" cy:edgeLineType="SOLID" cy:curved="STRAIGHT_LINES"/>
+</edge>
+<edge label="E411 (coev) S496" source="-123" target="-133">
+<att type="real" name="Coev" value="0.952017"/>
+<att type="string" name="canonicalName" value="E411 (coev) S496"/>
+<att type="string" name="coevion" value="coev" cy:editable="false"/>
+<graphics width="1" fill="#0000ff" cy:sourceArrow="0" cy:targetArrow="0" cy:sourceArrowColor="#000000" cy:targetArrowColor="#000000" cy:edgeLabelFont="Default-0-10" cy:edgeLabel="" cy:edgeLineType="SOLID" cy:curved="STRAIGHT_LINES"/>
+</edge>
+<edge label="E411 (coev) Q465" source="-123" target="-129">
+<att type="real" name="Coev" value="0.998052"/>
+<att type="string" name="canonicalName" value="E411 (coev) Q465"/>
+<att type="string" name="coevion" value="coev" cy:editable="false"/>
+<graphics width="1" fill="#0000ff" cy:sourceArrow="0" cy:targetArrow="0" cy:sourceArrowColor="#000000" cy:targetArrowColor="#000000" cy:edgeLabelFont="Default-0-10" cy:edgeLabel="" cy:edgeLineType="SOLID" cy:curved="STRAIGHT_LINES"/>
+</edge>
+</graph>

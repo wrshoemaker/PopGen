@@ -1,0 +1,66 @@
+
+                         MODELLER 9v1, 2007/01/19, r4822
+
+     PROTEIN STRUCTURE MODELLING BY SATISFACTION OF SPATIAL RESTRAINTS
+
+
+                     Copyright(c) 1989-2007 Andrej Sali
+                            All Rights Reserved
+
+                             Written by A. Sali
+                               with help from
+           B. Webb, M.S. Madhusudhan, M-Y. Shen, M.A. Marti-Renom,
+                N. Eswar, F. Alber, M. Topf, B. Oliva, A. Fiser,
+                    R. Sanchez, B. Yerkovich, A. Badretdinov,
+                      F. Melo, J.P. Overington, E. Feyfant
+                 University of California, San Francisco, USA
+                    Rockefeller University, New York, USA
+                      Harvard University, Cambridge, USA
+                   Imperial Cancer Research Fund, London, UK
+              Birkbeck College, University of London, London, UK
+
+
+Kind, OS, HostName, Kernel, Processor: 4, Linux synth.ucsf.edu 2.6.19-1.2895.fc6 i686
+Date and time of compilation         : 2007/01/19 13:28:19
+MODELLER executable type             : i386-intel8
+Job starting time (YY/MM/DD HH:MM:SS): 2007/01/22 14:01:24
+
+runcmd______> model.read(file='1bdm', (def)model_format='PDB', model_segment=('FIRST:A', 'LAST:A'))
+runcmd______> alignment.append_model(atom_files='1bdm.pdb', align_codes='1bdmA')
+runcmd______> alignment.append(align_codes=['1bdmA', 'TvLDH'], atom_files=['1bdm.pdb'], file='TvLDH.ali', (def)remove_gaps=True, (def)alignment_format='PIR', (def)rewind_file=False, (def)close_file=True)
+runcmd______> alignment.align2d((def)overhang=0, (def)align_block=0, (def)rr_file='$(LIB)/as1.sim.mat', (def)align_what='BLOCK', (def)off_diagonal=100, (def)max_gap_length=999999, (def)local_alignment=False, (def)matrix_offset=0.0, (def)gap_penalties_1d=(-900.0, -50.0), (def)gap_penalties_2d=(3.5, 3.5, 3.5, 0.20000000000000001, 4.0, 6.5, 2.0, 0.0, 0.0), (def)surftyp=1, (def)fit=True, (def)fix_offsets=(0.0, -1.0, -2.0, -3.0, -4.0), (def)read_weights=False, (def)write_weights=False, (def)input_weights_file='', (def)output_weights_file='', (def)n_subopt=1, (def)subopt_offset=0.0, (def)read_profile=False, (def)input_profile_file='', (def)write_profile=False, (def)output_profile_file='', (def)weigh_sequences=False, (def)smooth_prof_weight=10, (def)weights_type='SIMILAR')
+fndatmi_285W> Only      317 residues out of      318 contain atoms of type  CA
+              (This is usually caused by non-standard residues, such
+              as ligands, or by PDB files with missing atoms.)
+mkapsa__637W> No residue topology library is in memory.
+              Better radii would be used if topology.read() is called first.
+iup2crm_280W> No topology library in memory or assigning a BLK residue.
+              Default CHARMM atom type assigned:  N -->  N
+              This message is written only for the first such atom.
+fndatmi_285W> Only      317 residues out of      318 contain atoms of type  CA
+              (This is usually caused by non-standard residues, such
+              as ligands, or by PDB files with missing atoms.)
+fndatmi_285W> Only      317 residues out of      318 contain atoms of type  CA
+              (This is usually caused by non-standard residues, such
+              as ligands, or by PDB files with missing atoms.)
+
+Pairwise dynamic programming alignment (ALIGN2D):
+  Residue-residue metric   : $(LIB)/as1.sim.mat
+  Diagonal                 :          100
+  Overhang                 :            0
+  Maximal gap length       :       999999
+  Local alignment          :            F
+  MATRIX_OFFSET (local aln):       0.0000
+  FIX_OFFSETS              :      0.0    -1.0    -2.0    -3.0    -4.0
+  N_SUBOPT                 :            1
+  SUBOPT_OFFSET            :       0.0000
+  Alignment block          :            1
+  Gap introduction penalty :    -900.0000
+  Gap extension penalty    :     -50.0000
+  Gap diagonal penalty     :       0.0000
+  Structure gap penalties  :    3.500   3.500   3.500   0.200   4.000   6.500   2.000   0.000
+  Length of alignment      :          336
+  Score                    :  192686.3594
+runcmd______> alignment.write(file='TvLDH-1bdmA.ali', alignment_format='PIR', (def)alignment_features='INDICES CONSERVATION', (def)align_block=0, (def)align_alignment=False)
+runcmd______> alignment.write(file='TvLDH-1bdmA.pap', alignment_format='PAP', (def)alignment_features='INDICES CONSERVATION', (def)align_block=0, (def)align_alignment=False)
+Total CPU time [seconds]                                 :      65.84

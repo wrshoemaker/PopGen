@@ -1,0 +1,22 @@
+---
+output: pdf_document
+fontsize: 6pt 
+geometry: margin=0.5in
+---
+
+| Protein |            Species            | REFSEQ Accession Number |
+|:-------:|:-----------------------------:|:-----------------------:|
+|   A1CF  |          *Homo sapiens*         |        NP_055391        |
+|         |         *Macaca mulatta*        |       XP_001100059      |
+|         |     *Canis lupus familiaris*    |        XP_861026        |
+|         |           *Bos taurus*          |       XP_005225432      |
+|         |          *Mus musculus*         |       NP_001074543      |
+|         | *Xenopus (Silurana) tropicalis* |       XP_002935470      |
+|         |          *Danio rerio*          |        XP_685178        |
+|   SYNCRIP  |          *Homo sapiens*         |        NP_006363        |
+|         |         *Macaca mulatta*        |       NP_001180774     |
+|         |     *Canis lupus familiaris*    |        XP_532223        |
+|         |           *Bos taurus*          |      XP_002690247     |
+|         |          *Mus musculus*         |       NP_062640      |
+|         | *Xenopus (Silurana) tropicalis* |       XP_004914584      |
+|         |          *Danio rerio*          |        NP_999861        |

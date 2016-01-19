@@ -41,7 +41,7 @@ def blocks(s, n):
 
 def permute_sequence(input_fasta, output_fasta, nmbr_gnms, freq_output = False):
     fileParsed = readFASTA(input_fasta)
-    gen_ref = fileParsed[0][1]
+    gen_ref = fileParsed[0][1].upper()
     gen_name = fileParsed[0][0]
     setX = set(str(gen_ref))
     lenX = len(gen_ref)
@@ -49,12 +49,13 @@ def permute_sequence(input_fasta, output_fasta, nmbr_gnms, freq_output = False):
     letters.update((y, round((z/lenX),4)) for y, z in letters.items())
     letters = collections.OrderedDict(sorted(letters.items()))
     nuc_freqs = [x[1] for x in letters.items()]
+    print letters.items()
     #file_name = str(argv[1]).split('.')
     OUT1 = open(output_fasta, 'w+')
     l = list(gen_ref)
     if freq_output == True:
         OUT2 = open("./freq_perm_output.txt",'w+')
-        print>> OUT2, 0 ,nuc_freqs
+        print>> OUT2, 0 ,nuc_freqs[0],nuc_freqs[1],nuc_freqs[2],nuc_freqs[3]
     for i in range(int(nmbr_gnms)):
         random.shuffle(l)
         gen_perm = ''.join(l)
@@ -69,7 +70,7 @@ def permute_sequence(input_fasta, output_fasta, nmbr_gnms, freq_output = False):
             print>> OUT1, block
         if freq_output == True:
             freqs_list = [x[1] for x in letters_perm.items()]
-            print>> OUT2, (i+1), freqs_list
+            print>> OUT2, (i+1), freqs_list[0], freqs_list[1], freqs_list[2], freqs_list[3]
 
 
 if __name__ == '__main__':

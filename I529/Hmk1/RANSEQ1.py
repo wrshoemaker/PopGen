@@ -61,7 +61,7 @@ def blocks(s, n):
 
 def rndmGenome(file_fasta, iterations, gnm_output, output_freqs = False):
     fileParsed = readFASTA(file_fasta)
-    gen_ref = fileParsed[0][1]
+    gen_ref = fileParsed[0][1].upper()
     gen_name = fileParsed[0][0]
     setX = set(str(gen_ref))
     lenX = len(gen_ref)
@@ -74,7 +74,7 @@ def rndmGenome(file_fasta, iterations, gnm_output, output_freqs = False):
     OUT1 = open(gnm_output, 'w+')
     if output_freqs == True:
         OUT2 = open("./freq_rndm_output.txt",'w+')
-        print>> OUT2, 0 ,nuc_freqs
+        print>> OUT2, 0 ,nuc_freqs[0],nuc_freqs[1],nuc_freqs[2],nuc_freqs[3]
     for i in range(int(iterations)):
         gen_rndm = ''
         for j in range(0,lenX):
@@ -100,9 +100,22 @@ def rndmGenome(file_fasta, iterations, gnm_output, output_freqs = False):
         print>> OUT1, fasta_header
         for block in blocks(gen_rndm, 80):
             print>> OUT1, block
+
         if output_freqs == True:
-            freqs_list = [x[1] for x in letters_rndm.items()]
-            print>> OUT2, (i+1), freqs_list
+            if len(letters_rndm.items()) != 4:
+                nuc_dict = dict((y, x) for x, y in letters_rndm.items())
+                freqs_list = []
+                print nuc_dict
+                nuc_list = ['A', 'C', 'G', 'T']
+                for x in nuc_list:
+                    if x in nuc_dict:
+                        freqs_list.append(nuc_dict.get(x))
+                    else:
+                        freqs_list.append(float(0))
+            else:
+                freqs_list = [x[1] for x in letters_rndm.items()]
+
+            print>> OUT2, (i+1), freqs_list[0], freqs_list[1], freqs_list[2], freqs_list[3]
     print "The biological genome has relative nucleotide frequencies of:"
     print letters.items()
     #print "Your random genome has relative nucleotide frequencies of:"

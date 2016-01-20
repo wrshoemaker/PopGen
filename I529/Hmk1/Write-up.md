@@ -27,9 +27,11 @@ From here we can find the probability that someone who has gotten a positive res
 
 $$P(disease\mid positive) = \frac{P(positive\mid disease) * P(disease)}{P(positive)}$$
 
-Then calculate the probability of a positive result:
+Then calculate the probability of a positive result using the law of total probability:
 
-$$P(positive) = (P(positive\mid disease) * P( disease))  +  (P(positive\mid no\; disease) * P(no\; disease))$$
+$$P(A) = \sum_{n}P(A\, \cap \,  B_{n}) = \sum_{n}P(A\mid B_{n})P(B_{n})$$
+
+$$P(positive) = (P(positive\mid disease) * P( disease))  +(P(positive\mid no\; disease) * P(no\; disease))$$
 
 $$ = (1* (1*10^{-7})) + (0.9999999 * 0.0001) $$
 
@@ -44,5 +46,28 @@ $$  = 0.001 $$
 
 There is a very low probability of having the disease if the test is positive. Excluding the possibility of multiple tests or repeating the test, I would not want to take this test, as it conveys little information regarding whether or not I'd have the disease.
 
-#### add multiple testing part
+# fix this below
+
+However, I could take the test multiple times. Using the law of total probability, we can see what the probability of having the disease is given two positive test results. 
+
+$$P(disease\mid positive_{1}, positive_{2}) = \frac{P(positive_{1}\mid disease) * P(positive_{2}\mid disease)* P(disease) }{P(positive)} $$
+
+Get the total probality of a positive result.
+
+$$P(positive) = (P(positive\mid disease)^{2} * P( disease))  +  (P(positive\mid no\; disease)^{2} * P(no\; disease)) $$
+
+$$ = (1^{2}) (1*10^{-7}) + (0.9999999 * (0.0001)^{2}) $$ 
+
+$$\approx1.10*10^{-7}$$
+
+
+Which gives us
+
+$$P(disease\mid positive_{1}, positive_{2}) = \frac{1*1*(1*10^{-7})}{1.10*10^{-7}}$$
+
+$$\approx 0.909$$
+
+At which point I would begin to trust the test
+
+#### 2
 

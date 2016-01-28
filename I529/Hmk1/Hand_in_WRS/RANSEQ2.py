@@ -27,7 +27,7 @@ def ParseFASTA(fileFasta):
                 fasta_list.append(current_dna)
         	#pass if an error comes up
             except UnboundLocalError:
-            "Not in a FASTA format!"
+            	"Not in a FASTA format!"
                 pass
             current_dna = [line.lstrip('>').rstrip('\n'),'']
         else:

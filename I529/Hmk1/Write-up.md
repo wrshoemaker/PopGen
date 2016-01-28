@@ -46,8 +46,6 @@ $$  = 0.001 $$
 
 There is a very low probability of having the disease if the test is positive. Excluding the possibility of multiple tests or repeating the test, I would not want to take this test, as it conveys little information regarding whether or not I'd have the disease.
 
-# fix this below
-
 However, I could take the test multiple times. Using the law of total probability, we can see what the probability of having the disease is given two positive test results. 
 
 $$P(disease\mid positive_{1}, positive_{2}) = \frac{P(positive_{1}\mid disease) * P(positive_{2}\mid disease)* P(disease) }{P(positive)} $$
@@ -71,3 +69,36 @@ At which point I would begin to trust the test
 
 #### 2
 
+First, we construct a transition matrix. The rows represent time points $$t_{-1}$$ and $$t$$. The columns represent the probability of states $$t$$ and $$t_{+1}$$
+
+|    | CC  | CR  | CS  | RC  | RR  | RS  | SC  | SR  | SS  |
+|----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
+| CC | 0.6 | 0.2 | 0.2 | 0   | 0   | 0   | 0   | 0   | 0   |
+| CR | 0   | 0   | 0   | 0.2 | 0.6 | 0.2 | 0   | 0   | 0   |
+| CS | 0   | 0   | 0   | 0   | 0   | 0   | 0.2 | 0.2 | 0.6 |
+| RC | 0.6 | 0.2 | 0.2 | 0   | 0   | 0   | 0   | 0   | 0   |
+| RR | 0   | 0   | 0   | 0.3 | 0.5 | 0.2 | 0   | 0   | 0   |
+| RS | 0   | 0   | 0   | 0   | 0   | 0   | 0.2 | 0.2 | 0.6 |
+| SC | 0.6 | 0.2 | 0.2 | 0   | 0   | 0   | 0   | 0   | 0   |
+| SR | 0   | 0   | 0   | 0.2 | 0.6 | 0.2 | 0   | 0   | 0   |
+| SS | 0   | 0   | 0   | 0   | 0   | 0   | 0.2 | 0.1 | 0.7 |
+
+
+Using this table, given that it rains on January 1st and second and we want to know the probability of it raining on January 4th, we just need to know the transition probabilites from the 2nd to the 4th through the 3rd.
+
+So, the probability is
+
+$$ = (0.5 * 0.5) + (0.3 * 0.2) + (0.2*0.2)$$ = 0.35$$
+
+So there's a 35% chance of it raining on the 4th. 
+
+For looking far in the future, matrix multiplication can be used. With $$A$$ being the inverse of the above matrix and $$x^{0}$$ being the following array
+
+$$x^{0} = \begin{bmatrix}
+0, & 0, &0, &0,  &1,  &0,  &0,  &0,  &0 
+\end{bmatrix}^{-1}$$
+
+
+$$A^{6}x^{0}$$ gives us the probability
+
+Using this table and running a numpy script with the above equation, the probability of it rainin gon the 8th given that it rained on the first and second is 27.2095 %. 

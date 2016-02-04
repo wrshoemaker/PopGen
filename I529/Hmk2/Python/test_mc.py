@@ -192,15 +192,22 @@ codon_list = ["TTT", "TTC", "TTA", "TTG",
 ####
 
 
-#for x in codonCount_test:
-#    list_x = list(x.items())
-#    for y in list_x:
-#        if y[0] == None:
-#            print "what", len(list_x)
-#        if (len(list_x) == 2) and y[0] == None:
-#            codonCount_test.remove(x)
+for x in codonCount_test:
+    list_x = list(x.items())
+    print type(x)
+    #if len(x) == 2:
+        #print "what"
+    if None in x:
+        print "nonnneee"
+        codonCount_test.remove(x)
+    #for y in list_x:
+    #    if y[0] == None:
+    #        print "what", len(list_x)
+    #    if (len(list_x) == 2) and y[0] == None:
+    #        print x
+    #        codonCount_test.remove(x)
 #print codonCount_test
-
+#print codonCount_test
     #print list_x
 #    if (len(list_x) == 2) and (None in list_x):
 #        pass

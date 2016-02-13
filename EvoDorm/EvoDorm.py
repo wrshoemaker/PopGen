@@ -115,8 +115,10 @@ def dormancy_step(pop, active_size, dormant_size, c):
         pass
     else:
         K = active_size / dormant_size
-        dormancy_rate = int(round(c, 0))
-        resuscitation_rate = int(round((K*c), 0))
+        delta = (c*K) / N
+        epsilon = c / active_size
+        dormancy_rate = int(round(( epsilon * N ), 0))
+        resuscitation_rate = int(round(  (delta*N), 0))
         for i in range(0, dormancy_rate):
             new_haplotype = get_random_haplotype(pop, 'Active')
             pop['Active'][new_haplotype] -= 1

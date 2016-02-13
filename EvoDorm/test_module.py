@@ -4,10 +4,10 @@ import timeit
 import EvoDorm_test as edt
 import os
 
-mutation_rate = 0.2
-active_size = 100
+mutation_rate = 100
+active_size = 10
 dormant_size = 0
-seq_length = 100
+seq_length = 10
 generations = 100
 c = 0
 LH_strat = 'W'

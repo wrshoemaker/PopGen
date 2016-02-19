@@ -227,15 +227,16 @@ def log_likelihood_ratio(seq, alt_table, null_table):
     '''
     valid = 'ACTG'
     modulo = len(seq) % 3
-    seq = seq[:-modulo]
+    if modulo > 0:
+        seq = seq[:-modulo]
     seq = seq.upper()
     split_dna = [seq[i:i+3] for i in range(0, len(seq), 3)]
     sum_ll = 0
     for x in range(0, len(split_dna)-1):
         if (all(y in valid for y in split_dna[x]) and all(y in valid for y in split_dna[x+1]) ) == True:
             data_trans = split_dna[x] + '-' + split_dna[x+1]
-            print alt_table[data_trans], null_table[data_trans]
-            ll = math.log(alt_table[data_trans] )- math.log(null_table[data_trans])
+            #print math.log(alt_table[data_trans]) - math.log(null_table[data_trans])
+            ll = math.log(alt_table[data_trans] ) -    math.log(null_table[data_trans])
             #print ll
             #if ll ==0:
             #    print math.log(  alt_table[data_trans] ), math.log( null_table[data_trans] )
@@ -277,6 +278,8 @@ if __name__ == "__main__":
     ######### and sequences to a flat list containing only sequences
     sequences_train = [ x[1] for x in class_train.readFASTA() ]
     sequences_train = [x.upper() for x in sequences_train]
+    sequences_train = sequences_train[:1000]
+
     ######### concatenated the sequences
     concatenated_seq_train = ''.join(sequences_train)
 
@@ -290,6 +293,7 @@ if __name__ == "__main__":
     sequences_test = [ x[1] for x in class_test.readFASTA() ]
     sequences_names = [ x[0] for x in class_test.readFASTA() ]
     sequences_test = [x.upper() for x in sequences_test]
+    sequences_test = sequences_test[:500]
     ######### concatenated the sequences
 
 

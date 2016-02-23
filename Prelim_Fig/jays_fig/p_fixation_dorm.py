@@ -28,15 +28,19 @@ fig = plt.figure()
 ax = fig.add_subplot(1, 1, 1)
 
 
-plt.plot(x, line1)
-plt.plot(x, line2,  color = 'b')
-plt.plot(x, line3)
-plt.plot(x, line4)
-
+plt.plot(x, line1,color = 'b', linestyle = '-', label="y = 0.5, K = 0.01")
+plt.plot(x, line2, color = 'b',linestyle = '--', label="y = 0.5, K = 0.1")
+plt.plot(x, line3, color = 'b',linestyle = '-.', label="y = 0.5, K = 1.0")
+plt.plot(x, line4, color = 'b',linestyle = ':', label="y = 0.5, K = 10.0")
+plt.plot(x, line5, color = 'b', linestyle = ' ', label="y = 0.5, K = 100.0")
 
 plt.tight_layout()
-
+plt.ylabel(r'$P(fixation)$', fontsize = 18)
+plt.xlabel(r'$x$', fontsize = 18)
 output = "dorm_fix_prob.png"
+plt.legend(loc='upper left')
+
+#fig.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)
 plt.savefig(output, bbox_inches = "tight", pad_inches = 0.4, dpi = 600)
 #plt.xscale()
 plt.close()

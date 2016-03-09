@@ -126,12 +126,32 @@ class getParams:
         for key1, value1 in length_dict.iteritems():
             maxKey = max(value1.keys(), key=int)
             # add pseudocounts
+
             for x in range(1,int(maxKey)+1):
                 value1[str(x)] += 1
             denom = sum(value1.values())
             for key2, value2 in value1.items():
-                value1[key2] = math.log(value2 / denom)
+                 value1[key2] = round(math.log(value2 / denom), 5)
         return length_dict
+
+
+def stateLength(stateList):
+    '''
+    Takes a list as an argument. Returns a tuple of the state identity
+    and the number of the same states that occur in a row.
+    '''
+    stateList = stateList[::-1]
+    count = 0
+    if len(stateList) > 1:
+        for x in range(0, len(stateList)-1 ):
+            if stateList[x] == stateList[x+1]:
+                count += 1
+            else:
+                break
+    count += 1
+    stateLast = stateList[count-1]
+    returnTuple = (stateLast, count)
+    return returnTuple
 
 def viterbi(IN, lengthParams, emissionParams, stateParams, initialParams):
     stateList = []
@@ -149,19 +169,31 @@ def viterbi(IN, lengthParams, emissionParams, stateParams, initialParams):
             priorState = stateList[x-1]
             bestDict = {}
             for key, value in stateParams.iteritems():
-                #print x, len(stateList[:x-1])
-                ###### here factor in the length data
-                # Get number of prior states, pull the likelihood from the dictionary
-                # and factor that into the likelihood calculation for staying in
-                # the same state
-                if stateList == priorState:
-                    continue
-                else:
-                    if key[0] == priorState:
+                lenState = []
+                count = 0
+                priorList = stateList[:x-1]
+                if key[0] == priorState:
+                    if len(priorList) > 0:
+                        stateTuple = stateLength(priorList)
+                        if str(stateTuple[1]) in lengthParams[stateTuple[0]]:
+                            currentValue = value + emissionParams[key[-1]][currentEmission] + \
+                                lengthParams[stateTuple[0]][str(stateTuple[1])]
+                            bestDict[key[-1]] = currentValue
+                        else:
+                            if key[0] == key[-1]:
+                                continue
+                            else:
+                                currentValue = value + emissionParams[key[-1]][currentEmission]
+                                bestDict[key[-1]] = currentValue
+                    else:
                         currentValue = value + emissionParams[key[-1]][currentEmission]
                         bestDict[key[-1]] = currentValue
-                likelihood += max(bestDict.iteritems(), key=operator.itemgetter(1))[1]
-                stateList.append(max(bestDict.iteritems(), key=operator.itemgetter(1))[0])
+                if bool(bestDict) == False:
+                    continue
+                else:
+                    likelihood += max(bestDict.iteritems(), key=operator.itemgetter(1))[1]
+                    stateList.append(max(bestDict.iteritems(), key=operator.itemgetter(1))[0])
+    print len(stateList)
     return likelihood
 
 
@@ -193,10 +225,10 @@ if __name__ == "__main__":
     stateParams = splitLinesClass.stateParams()
     initialParams = splitLinesClass.initialParams()
 
-
+    print lengthParams
     class_test = classFASTA(IN)
     sequences = [ x[1] for x in class_test.readFASTA() ]
     INsequence = sequences[0]
     #print lengthParams
-
+    print len(INsequence)
     print viterbi(INsequence, lengthParams, emissionParams, stateParams,initialParams)

@@ -59,49 +59,57 @@ def CV_KDE(oneD_array, expand = 1000):
     return return_tuple
 
 #returnKDE = get_kdens_choose_kernel(CTCnumpy, 1000, kernel = 0.05 )
-#returnKDE = CV_KDE(CTCnumpy)
 
 
 #km = KMeans(n_clusters=2, init='k-means++', n_init=10,
 #            max_iter=300, tol=1e-04, random_state=0)
 
-X = StandardScaler().fit_transform(plateData)
+#X = StandardScaler().fit_transform(plateData)
 
 ##############################################################################
 # Compute DBSCAN
 
-km = MiniBatchKMeans(n_clusters=2, init='k-means++', n_init=10,
-            max_iter=300, tol=1e-04, random_state=0)
+#km = MiniBatchKMeans(n_clusters=2, init='k-means++', n_init=10,
+#            max_iter=300, tol=1e-04, random_state=0)
 #km = spectral_clustering(X, n_clusters=2, eigen_solver='arpack')
 
 
-y_km = km.fit_predict(X)
-plt.scatter(X[y_km==0,0], X[y_km==0,1], s=25,
-            c='green', marker='s', label='Active')
-plt.scatter(X[y_km==1,0], X[y_km==1,1], s=25,
-            c='red', marker='o', label='Dormant')
+#y_km = km.fit_predict(X)
+#plt.scatter(X[y_km==0,0], X[y_km==0,1], s=25,
+#            c='green', marker='s', label='Active')
+#plt.scatter(X[y_km==1,0], X[y_km==1,1], s=25,
+#            c='red', marker='o', label='Dormant')
 
 #plt.scatter(km.cluster_centers_[:,0], km.cluster_centers_[:,1],
 #            s=200, marker='*', c='red', label='centroids')
 
-plt.legend()
-plt.grid()
-plt.tight_layout()
+#plt.legend()
+#plt.grid()
+#plt.tight_layout()
 #plt.savefig('./figures/centroids.png', dpi=300)
-plt.show()
+#plt.show()
 
 #plt.savefig('./figures/centroids.png', dpi=300)
 #plt.show()
 
 
-#fig = plt.figure()
-#ax = fig.add_subplot(1, 1, 1)
-#ax.scatter(DNAnumpy, CTCnumpy)
-#ax.set_xlim([-1000,4000])
+#toPlot = ['A3', 'B1', 'B3', 'C2']
+toPlot = ['C2']
 
-#plt.plot(returnKDE[0], returnKDE[1],color = 'b', linestyle = '-', label="N = 1000, B = 1")
-output = 'testKDE.png'
-plt.savefig(output)
-#plt.savefig(output, bbox_inches = "tight", pad_inches = 0.4, dpi = 600)
-#plt.xscale()
-plt.close()
+for x in toPlot:
+    gated_sample_beads_A3_1 = plate[x].gate(gate)
+    CTCnumpy_1 = gated_sample_beads_A3_1[['PI (B)-A']].values
+    returnKDE_1 = CV_KDE(CTCnumpy_1)
+    fig = plt.figure()
+    ax = fig.add_subplot(1, 1, 1)
+    #ax.scatter(DNAnumpy, CTCnumpy)
+    #ax.set_xlim([-1000,4000])
+
+    plt.plot(returnKDE_1[0], returnKDE_1[1],color = 'b', linestyle = '-', label="N = 1000, B = 1")
+    plt.xlabel('Metabolic activity (CTC)', fontsize = 18)
+    plt.ylabel('Probability', fontsize = 18)
+    output = x + '.png'
+    #plt.savefig(output)
+    plt.savefig(output, bbox_inches = "tight", pad_inches = 0.4, dpi = 600)
+    #plt.xscale()
+    plt.close()

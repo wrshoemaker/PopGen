@@ -41,7 +41,7 @@ plt.plot(p, line4, color = 'b',linestyle = ':', label=r'$N = 1000,\, \beta = 1,0
 
 plt.tight_layout()
 plt.ylabel(r'$log_{10}(\bar{t}(p))$', fontsize = 18, rotation = 90)
-plt.xlabel(r'$p$', fontsize = 18)
+plt.xlabel(r'$Allele \,frequency, (p)$', fontsize = 18)
 plt.legend(loc='upper right', prop={'size':10})
 
 #fig.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)
@@ -78,7 +78,7 @@ plt.plot(p, line3, color = 'b',linestyle = '-.', label=r'$N = 1000,\, \beta = 10
 
 plt.tight_layout()
 plt.ylabel(r'$log_{10}(\bar{t^{*}})$', fontsize = 18, rotation = 90)
-plt.xlabel(r'$s$', fontsize = 18)
+plt.xlabel(r'$Selection\, coefficient,(s)$', fontsize = 18)
 output = "time_fixation_select_both.png"
 plt.legend(loc='upper right', prop={'size':10})
 

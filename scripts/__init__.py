@@ -1,1 +1,0 @@
-from Generate_DNA import random_sequence

@@ -1,0 +1,1 @@
+Sample b0 A umax L z umax_lw umax_up umax_lw_FI umax_up_FI

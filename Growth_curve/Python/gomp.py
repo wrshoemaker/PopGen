@@ -17,11 +17,6 @@ mydir = os.path.expanduser("~/GitHub/PopGen/Growth_curve/")
 def m_gop(t, b0, A, umax, L):
     t = np.asarray(t)
     term = -np.exp(((umax*np.exp(1)) / A) * (L - t) + 1)
-    #term = -np.exp((umax*np.exp(1)*(L-t)/A)+1)
-    #print np.exp(term)
-
-    #print b0 + (A*np.exp(term))
-
     return b0 + (A*np.exp(term))
 
 # function to generate confidence intervals based on Fisher Information criteria
@@ -34,13 +29,10 @@ def CI_FIC(results):
     return (lw, up)
 
 
-
 class modifiedGompertz(GenericLikelihoodModel):
     def __init__(self, endog, exog, **kwds):
         super(modifiedGompertz, self).__init__(endog, exog, **kwds)
         #print len(exog)
-
-
 
     def nloglikeobs(self, params):
         b0 = params[0]
@@ -66,9 +58,8 @@ class modifiedGompertz(GenericLikelihoodModel):
             start_params = np.array([b0_start, A_start, umax_start, L_start, z_start])
 
         return super(modifiedGompertz, self).fit(start_params=start_params,
-                                                    maxiter=maxiter, method = method,
-                                                    maxfun=maxfun, **kwds)
-
+                                maxiter=maxiter, method = method, maxfun=maxfun,
+                                **kwds)
 
 def cleanData(path_IN, path_OUT, wells = 48):
     IN = open(path_IN, 'r')
@@ -95,21 +86,22 @@ def modGompGrowth(IN_file_name, interceptGuess=0.1, delta = 0.05, synergy=True, 
     IN = pd.read_csv(mydir + 'data/clean/'+ IN_file_name, sep = '\t')
     IN['Time'] = pd.to_datetime(IN['Time'], format='%H:%M:%S')
     IN['Minutes'] = IN['Time'].dt.hour * 60 + IN['Time'].dt.minute
-    OUT = open(mydir + 'data/params/' +  IN_file_name + 'params_.txt', 'w')
+    OUT = open(mydir + 'data/params/' +  IN_file_name.split('.')[0] + '_params.txt', 'w')
     print>> OUT, 'Sample', 'b0', 'A', 'umax', 'L', 'z', 'umax_lw', 'umax_up', \
             'umax_lw_FI', 'umax_up_FI'
     t = IN['Minutes'].values / 60
+    #t =  IN['Time'].values
     for column in IN:
-        if IN[column].name == 'Time' or IN[column].name == 'Temp_C':
+        if IN[column].name == 'Time' or IN[column].name == 'Temp_C' or IN[column].name == 'Minutes':
             continue
-        if IN[column].name != 'A7':
+        if IN[column].name != 'A2':
             continue
         # growth curve
         s = IN[column].values
         s_name = IN[column].name
         if max(s) - min(s) < delta:
             print "Observed change in OD is not greater than " +  str(delta) + \
-                  " in well " + gc_name
+                  " in well " + IN[column].name
             continue
         if smooth == True:
             taps = [1/11] * 11
@@ -120,8 +112,13 @@ def modGompGrowth(IN_file_name, interceptGuess=0.1, delta = 0.05, synergy=True, 
         else:
             s_2 = s
         s_2_max =  np.argmax(s_2)
-        t_trim = t[:s_2_max + 1]
-        s_trim = s_2[:s_2_max + 1]
+        if len(s_2) < s_2_max + 20:
+            t_trim = t
+            s_trim = s_2
+        else:
+            t_trim = t[:s_2_max + 20]
+            s_trim = s_2[:s_2_max + 20]
+
 
         # we're going to loop through the following combination of
         # parameter values
@@ -131,6 +128,7 @@ def modGompGrowth(IN_file_name, interceptGuess=0.1, delta = 0.05, synergy=True, 
         # and while keeping the following initial values constant
         b0_start = interceptGuess
         A_start = max(s_trim)
+        #A_start = 1.5
         model = modifiedGompertz(t_trim, s_trim)
         results = []
         for umax_start in umax_start_list:
@@ -138,15 +136,20 @@ def modGompGrowth(IN_file_name, interceptGuess=0.1, delta = 0.05, synergy=True, 
                 for z_start in z_start_list:
                     # b0, A, umax, L, z
                     start_params = [b0_start, A_start, umax_start, L_start, z_start]
-                    result = model.fit(start_params = start_params, method="bfgs")
-                    if result.mle_retvals['warnflag'] == 0:
-                        results.append(result)
+                    #result = model.fit(start_params = start_params, method="lbfgs", optim_args={'bounds':[(0,1), (A_start,10), (0,5), (-20,20), (-20, 20)]})
+                    result = model.fit(start_params = start_params, method="lbfgs", bounds= [(-1,1), (0,10), (0,5), (-20,20), (-20, 20)] )
+                    #result = model.fit(start_params = start_params, method="lbfgs", optim_args={'bounds':1e-6})
+                    #if result.mle_retvals['warnflag'] == 0:
+                    results.append(result)
         AICs = [result.aic for result in results]
-
+        print AICs
+        print min(AICs)
         best = results[AICs.index(min(AICs))]
         best_CI_FIC = CI_FIC(best)
         best_CI = best.conf_int()
         best_params = best.params
+        print best_params
+        print best.mle_settings
         #boot_mean, boot_std, boot_samples = best.bootstrap(nrep=500, store=True)
         print>> OUT, IN[column].name, best_params[0], best_params[1], best_params[2], \
                 best_params[3], best_params[4], best_CI[2][0], best_CI[2][1], \
@@ -169,17 +172,9 @@ def modGompGrowth(IN_file_name, interceptGuess=0.1, delta = 0.05, synergy=True, 
 
 
 
-path_IN = mydir + 'data/raw/GrowthCurve_Example.txt'
-path_OUT = mydir + 'data/clean/GrowthCurve_Example_clean.txt'
-cleanData(path_IN, path_OUT)
+#path_IN = mydir + 'data/raw/GrowthCurve_Example.txt'
+#path_OUT = mydir + 'data/clean/GrowthCurve_Example_clean.txt'
+#cleanData(path_IN, path_OUT)
 path = 'GrowthCurve_Example_clean.txt'
+#path = 'Pseudo.csv'
 modGompGrowth(path, smooth = True)
-
-#s = [0.01, 0.01, 0.016, 0.02, 0.03, 0.04,0.06, 0.08, 0.09, 0.10, 0.12, 0.14, 0.16, 0.18]
-#t = [1, 1.2, 1.4, 1.5, 1.8, 1.9, 3.0, 3.5, 3.8, 4.0, 4.2, 4.4, 4.6, 4.8]
-#t = np.asarray(t)
-#s = np.asarray(s)
-
-#print np.log(stats.norm(s_pred, np.exp(-0.5)).pdf(s))
-# t = endog
-# s = exog

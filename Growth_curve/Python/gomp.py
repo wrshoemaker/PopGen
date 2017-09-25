@@ -137,7 +137,7 @@ def modGompGrowth(IN_file_name, interceptGuess=0.1, delta = 0.05, synergy=True, 
                     # b0, A, umax, L, z
                     start_params = [b0_start, A_start, umax_start, L_start, z_start]
                     #result = model.fit(start_params = start_params, method="lbfgs", optim_args={'bounds':[(0,1), (A_start,10), (0,5), (-20,20), (-20, 20)]})
-                    result = model.fit(start_params = start_params, method="lbfgs", bounds= [(-1,1), (0,10), (0,5), (-20,20), (-20, 20)] )
+                    result = model.fit(start_params = start_params, method="lbfgs", bounds= [(-1,1), (A_start * 0.66,10), (0,5), (-20,20), (-20, 20)] )
                     #result = model.fit(start_params = start_params, method="lbfgs", optim_args={'bounds':1e-6})
                     #if result.mle_retvals['warnflag'] == 0:
                     results.append(result)
@@ -149,7 +149,7 @@ def modGompGrowth(IN_file_name, interceptGuess=0.1, delta = 0.05, synergy=True, 
         best_CI = best.conf_int()
         best_params = best.params
         print best_params
-        print best.mle_settings
+        #print best.mle_settings
         #boot_mean, boot_std, boot_samples = best.bootstrap(nrep=500, store=True)
         print>> OUT, IN[column].name, best_params[0], best_params[1], best_params[2], \
                 best_params[3], best_params[4], best_CI[2][0], best_CI[2][1], \

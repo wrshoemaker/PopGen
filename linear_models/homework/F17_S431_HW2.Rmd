@@ -1,0 +1,32 @@
+---
+title: "S431 Assignment 2"
+date: "Due September 10, 2017"
+output: pdf_document
+---
+## Q1 
+
+Assume $Y_1$ and $Y_2$ are random variables, and $a_1,a_2$ are constants. Represent the following expressions in terms of $E(X), E(Y), var(X)$, and/or $var(Y)$. 
+
+### 1a
+$E(a_1Y_1+a_2Y_2)$
+
+### 1b
+$var(a_1Y_1+a_2Y_2)$
+
+###1c
+$var(a_1Y_1+a_2Y_2)$ if $Y_1$ and $Y_2$ are independent.
+
+## Q2
+Assume that $Y_1, Y_2, \dots, Y_n$ are independent random variables and $a1_, a_2, \dots, a_n, c_1, c_2, \dots, c_n$ are constants. Represent the following expressions in terms of $E(Y_i), var(Y_i)$, and/or $cov(Y_i,Y_j)$ for $i \neq j$ and $i,j=1,\dots,n$.
+
+### 2a 
+$var (\sum_{i=1}^n a_i Y_i)$
+
+### 2a
+$cov (\sum_{i=1}^n a_i Y_i, \sum_{i=1}^n c_i Y_i)$
+
+
+Hint: If $Y_1, Y_2, \dots, Y_n$ are random variables, then
+
+- $E (\sum_{i=1}^n a_i Y_i)=\sum_{i=1}^n a_i E(Y_i)$
+- $var(\sum_{i=1}^n a_i Y_i)=\sum_{i=1}^n\sum_{j=1}^n a_i a_j cov(Y_i,Y_j)$

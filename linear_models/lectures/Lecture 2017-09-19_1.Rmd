@@ -1,0 +1,100 @@
+---
+title: "Linear Regression"
+date: "September 14, 2017"
+output: html_document
+---
+
+
+```{r include=FALSE}
+library(alr4)
+library(ggplot2)
+library(dplyr)
+```
+
+## Toluca Company
+
+This data set contains information on lot size and work hours for the Toluca company.  The company wishes to study the relationship between lot size (X) and work hours (Y).
+
+```{r}
+toluca <- read.table('Data Sets/Chapter  1 Data Sets/tolucadata.txt')
+names(toluca) <- c('lotsize', 'workhrs')
+x <- toluca$lotsize
+y <- toluca$workhrs
+```
+
+
+Make a scatterplot of the data.
+
+```{r}
+ggplot(data=toluca, aes(x=lotsize, y=workhrs)) + geom_point()
+```
+
+
+Find the linear regression coefficient estimates.
+
+```{r}
+(beta1 <- sum((x-mean(x))*(y-mean(y)))/sum((x-mean(x))^2))
+(beta0 <- mean(y)-beta1*mean(x))
+```
+
+
+Add the fitted regression line to the scatterplot.
+
+```{r}
+ggplot(data=toluca, aes(x=lotsize, y=workhrs)) + geom_point() + geom_abline(intercept = beta0, slope=beta1, color='red') 
+```
+
+Check your work using `geom_smooth` with `method='lm'`.
+
+```{r}
+ggplot(data=toluca, aes(x=lotsize, y=workhrs)) + geom_point() + geom_abline(intercept = beta0, slope=beta1, color='red') + geom_smooth(method='lm')
+```
+
+
+Compute the fitted values (estimated mean response) and plot.
+
+```{r}
+yhat <- beta0 + beta1*x
+toluca$workhrs_pred <- yhat
+ggplot(data=toluca, aes(x=lotsize, y=workhrs)) + geom_point() + geom_abline(intercept = beta0, slope=beta1, color='red') + geom_point(aes(y=workhrs_pred), color='red')
+```
+
+
+
+Compute the residuals.
+
+```{r}
+e <- y - yhat
+```
+
+
+Examine the assumptions of the Gauss-Markov Theorem:
+1. residuals have mean zero for all values of $x$
+2. residuals are homoscedastic (constant variance for all values of $x$)
+3. uncorrelated errors (based on sampling design)
+
+```{r}
+toluca$residual <- e
+ggplot(toluca, aes(x=lotsize, y=residual)) + geom_point() + geom_hline(yintercept=0, linetype=2)
+```
+
+The plot does not show any notable evidence of non-constant mean or non-constant variance (heteroskedasticity).
+
+
+Estimate the residual variance and plot as a band around fitted regression line.
+
+```{r}
+n <- nrow(toluca)
+sigma_sq <- sum(e^2)/(n-2)
+sigma <- sqrt(sigma_sq)
+ggplot(data=toluca, aes(x=lotsize, y=workhrs)) + geom_point() + geom_abline(intercept = beta0, slope=beta1, color='red') + geom_ribbon(aes(ymin=workhrs_pred-2*sigma, ymax=workhrs_pred+2*sigma), alpha=0.5)
+```
+
+
+The `lm()` function can be used to perform linear regression automatically:
+
+```{r}
+model <- lm(workhrs ~ lotsize, data=toluca)
+summary(model)
+```
+

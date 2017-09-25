@@ -1,0 +1,142 @@
+---
+title: "Graphical Representations"
+date: "September 12, 2017"
+output: html_document
+---
+
+
+```{r include=FALSE}
+library(alr4)
+library(ggplot2)
+library(dplyr)
+```
+
+# Scatterplots
+
+## Inheritance of Height
+
+```{r}
+dim(Heights)
+names(Heights)
+head(Heights)
+```
+
+
+
+
+## Heights for Mothers and Daughters
+
+```{r}
+plot(dheight~mheight,data=Heights)
+```
+
+## Heights for Mothers and Daughters
+
+Alternative ways to obtain the scatterplot:
+
+```{r}
+plot(dheight~mheight,data=Heights)
+qplot(x=mheight, y=dheight, data=Heights) #ggplot2 package
+ggplot(data=Heights, aes(x=mheight, y=dheight)) + geom_point() #ggplot2 package
+```
+
+
+## Heights, Variability
+
+```{r}
+Heights$mheight_grp <- round(Heights$mheight/2)*2
+qplot(data=Heights, x=mheight_grp, y=dheight)
+qplot(data=Heights, x=mheight_grp, y=dheight, geom='jitter')
+qplot(data=Heights, x=mheight_grp, y=dheight, geom='jitter', color=mheight)
+ggplot(data=Heights, aes(x=mheight_grp, y=dheight)) + geom_jitter(aes( color=mheight_grp), alpha=0.5)
+```
+
+```{r}
+Heights_summ <- Heights %>% group_by(mheight_grp) %>% 
+  summarize(sd = sd(dheight), mean=mean(dheight)) #dplyr package
+ggplot() + 
+  geom_jitter(data=Heights, aes(x=mheight_grp, y=dheight, color=mheight), alpha=0.5) + 
+  geom_point(data=Heights_summ, aes(x=mheight_grp, y=mean), color='red',size=2) 
+ggplot() + 
+  geom_jitter(data=Heights, aes(x=mheight_grp, y=dheight, color=mheight), alpha=0.5) + 
+  geom_point(data=Heights_summ, aes(x=mheight_grp, y=mean), color='red',size=2) +
+  geom_linerange(data=Heights_summ, aes(x=mheight_grp, ymin=mean-1*sd, ymax=mean+1*sd), color='red')
+```
+
+```{r}
+help(geom_smooth)
+ggplot(data=Heights, aes(x=mheight, y=dheight)) + geom_point() + geom_smooth(method='loess') 
+ggplot(data=Heights, aes(x=mheight, y=dheight)) + geom_point() + geom_smooth(method='loess') + geom_smooth(method='lm', color='red') 
+```
+
+
+## Groupwork
+
+
+### Length versus age for smallmouth bass
+1. Why does it make sense to look at length as the response variable and age as the predictor variable?
+2. Make a plot with age on the x-axis and length on the y-axis.
+3. Add a loess smoother and linear regression line. 
+
+```{r}
+head(wblake)
+help(wblake)
+```
+
+
+### Predicting Snowfall
+1. Make a scatter plot and add a smoother to investigate the relationship between early and late snowfalls in Fort Collins.
+2. Color the points by year.  Do you see any trends?
+
+```{r}
+head(ftcollinssnow)
+help("ftcollinssnow")
+```
+
+
+
+## Mean Functions
+
+- We are interested on how the distribution of Y changes as X varies
+- The mean function focuses on the mean of this distribution:
+  - $E(Y|X=x)=$ a function that depends on the value of $x$ such as
+  \[E(dheigth|mheight=x)=\beta_0+\beta_1 x\]
+
+## Variance Functions
+ - Another characteristic of the distribution of Y is the variance function
+ - $Var(Y|X=x)=\sigma^2$
+
+## Summary Graph 
+
+- Anscombe 1973
+- Four different data set
+- All provide the same slope, intercept, and other summary statistics
+
+## Anscombe Data sets
+
+```{r}
+anscombe
+```
+
+## Anscombe Data sets
+
+```{r}
+options(digits=3)
+apply(X = anscombe, MARGIN = 2, mean)
+apply(X = anscombe, MARGIN = 2, sd)
+xs <- anscombe[,1:4]
+ys <- anscombe[,5:8]
+for (i in 1:4){
+  coefs_i <- coef(lm(ys[,i] ~ xs[,i]))
+  print(coefs_i)
+}
+```
+
+## Summary Graph
+```{r}
+for (i in 1:4){
+  dat <- data.frame(x=xs[,i], y=ys[,i])
+  print(ggplot(dat, aes(x=x, y=y)) + geom_point() + geom_smooth(method='lm'))
+}
+```
+

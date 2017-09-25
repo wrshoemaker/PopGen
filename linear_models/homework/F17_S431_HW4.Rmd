@@ -1,0 +1,56 @@
+---
+title: "F17_S431_HW4"
+author: "Will Shoemaker"
+date: "9/19/2017"
+output: html_document
+---
+
+
+
+```{r include=FALSE}
+library(alr4)
+library(ggplot2)
+library(dplyr)
+```
+
+```{r setup, include=FALSE}
+set.seed(4634)
+error <- rnorm(35, mean = 0, sd = 9)
+x <- seq(1, 35, by=1)
+y <- 10 + (-2.5 * x)+ error
+```
+
+# make scatterplot
+```{r}
+my.df <- do.call(rbind, Map(data.frame, x=x, y=y))
+
+ggplot(data=my.df, aes(x=x, y=y)) + geom_point()
+
+```
+
+# get betas
+```{r}
+(beta1 <- sum((x-mean(x))*(y-mean(y)))/sum((x-mean(x))^2))
+(beta0 <- mean(y)-beta1*mean(x))
+model <- lm(y ~ x, data=my.df)
+
+print(beta0 - 10)
+print(beta1 - (-2.5))
+```
+
+# residuals
+```{r}
+yhat <- beta0 + beta1*x
+e <- y - yhat
+model$residuals
+```
+
+
+# estimated variance
+```{r}
+(summary(model)$sigma)
+
+n <- nrow(my.df)
+sigma_sq <- sum(e^2)/(n-2)
+sigma <- sqrt(sigma_sq)
+```

@@ -1,0 +1,95 @@
+---
+title: "Linear Regression"
+date: "September 14, 2017"
+output: html_document
+---
+
+```{r, results = 'hide'}
+rm(list = ls())
+getwd()
+setwd("~/GitHub/PopGen/linear_models")
+```
+
+```{r include=FALSE}
+library(alr4)
+library(ggplot2)
+library(dplyr)
+```
+
+## Toluca Company
+
+This data set contains information on lot size and work hours for the Toluca company.  The company wishes to study the relationship between lot size (X) and work hours (Y).
+
+```{r}
+toluca <- read.table('data/Chapter_1_Data_Sets/tolucadata.txt')
+names(toluca) <- c('lotsize', 'workhrs')
+x <- toluca$lotsize
+y <- toluca$workhrs
+```
+
+
+Make a scatterplot of the data.
+
+```{r}
+ggplot(data=toluca, aes(x=lotsize, y=workhrs)) + geom_point()
+```
+
+
+Find the linear regression coefficient estimates.
+
+```{r}
+(beta1 <- sum((x-mean(x))*(y-mean(y)))/sum((x-mean(x))^2))
+(beta0 <- mean(y)-beta1*mean(x))
+```
+
+
+Add the fitted regression line to the scatterplot.
+
+```{r}
+ggplot(data=toluca, aes(x=lotsize, y=workhrs)) + geom_point() + geom_abline(intercept = beta0, slope=beta1, color='red') 
+```
+
+Check your work using `geom_smooth` with `method='lm'`.
+
+```{r}
+ggplot(data=toluca, aes(x=lotsize, y=workhrs)) + geom_point() + geom_abline(intercept = beta0, slope=beta1, color='red') + geom_smooth(method='lm')
+```
+
+
+Compute the fitted values (estimated mean response).
+
+```{r}
+y_hat <- beta0 + (beta1 * x)
+ggplot(data=toluca, aes(x=lotsize, y=workhrs)) + geom_point() + #ggplot2 package
+  geom_line(color='red', aes(x, y_hat))
+```
+
+
+
+Compute the residuals.
+
+```{r}
+eps <- y - y_hat
+```
+
+
+Examine the assumptions of the Gauss-Markov Theorem:
+1. residuals have mean zero (always true in OLS)
+2. residuals are homoscedastic
+3. uncorrelated errors (based on sampling design)
+
+```{r}
+mean(eps)
+sd(eps)
+```
+
+
+
+Estimate the residual variance and plot as a band around fitted regression line.
+
+```{r}
+n <- nrow(toluca)
+ggplot()
+```
+
+

@@ -1,0 +1,45 @@
+---
+title: "Groupwork 9/12"
+author: "Your Name Here"
+output: html_document
+---
+
+
+```{r include=FALSE}
+#install.packages("alr4") <- run this if you have never installed the alr4 package
+library(alr4)
+library(ggplot2)
+library(dplyr)
+```
+
+```{r}
+head(wblake)
+help(wblake)
+```
+
+### Length versus age for smallmouth bass
+1. Using `ggplot` or `qplot`, make a plot with age on the x-axis and length on the y-axis using the "point" geom.
+2. Avoid overplotting by using the "jitter" geom, with or without transparency.  To avoid over-jittering, set `width=0.1` and `height=0`.
+3. Describe the relationship between Age and Length.  
+3. Color the points by Scale.  Use `scale_color_gradientn()` to create a color scale with at least 4 colors.  
+4. Describe the relationship between Scale and Age.
+5. Conditional on Age, describe the relationship between Scale and Length.
+
+1.
+
+```{r}
+ggplot(data=wblake, aes(x=Age, y=Length)) + geom_point()
+```
+
+2. 
+```{r}
+ggplot(data=wblake, aes(x=Age, y=Length)) + geom_jitter(alpha=0.5, width=0.1, height=0)
+```
+
+3. 
+```{r}
+ggplot(data=wblake, aes(x=Age, y=Length)) + 
+  #geom_jitter(alpha=0.5, width=0.1, height=0) +
+  geom_point(aes(colour = Scale)) +
+  scale_colour_gradientn(colours = terrain.colors(10))
+```

@@ -1,0 +1,79 @@
+---
+title: "Graphical Representations"
+date: "September 12, 2017"
+output: html_document
+---
+
+```{r, results = 'hide'}
+rm(list = ls())
+getwd()
+setwd("~/GitHub/PopGen/linear_models")
+```
+
+
+```{r include=FALSE}
+library(alr4)
+library(ggplot2)
+library(dplyr)
+```
+
+## Inheritance of Height
+
+```{r}
+ggplot(data=Heights, aes(x=mheight, y=dheight)) + geom_point() #ggplot2 package
+```
+
+
+## Toluca Company
+
+This data set contains information on lot size and work hours for the Toluca company.  The company wishes to study the relationship between lot size (X) and work hours (Y).
+
+```{r}
+toluca <- read.table('data/Chapter_1_Data_Sets/tolucadata.txt')
+names(toluca) <- c('lotsize', 'workhrs')
+x <- toluca$lotsize
+y <- toluca$workhrs
+```
+
+
+Make a scatterplot of the data.
+
+```{r}
+ggplot(data=toluca, aes(x=lotsize, y=workhrs)) + geom_point() #ggplot2 package
+```
+
+
+Find the linear regression coefficient estimates.
+
+```{r}
+(beta1 <- sum((x-mean(x))*(y-mean(y)))/sum((x-mean(x))^2))
+(beta0 <- mean(y)- (beta1*mean(x)))
+```
+
+
+Add the fitted regression line to the scatterplot.
+
+```{r}
+y_hat <- beta0 + (beta1 * x)
+ggplot(data=toluca, aes(x=lotsize, y=workhrs)) + geom_point() + #ggplot2 package
+  geom_line(color='blue', aes(x, y_hat))
+```
+
+
+Compute the residuals.
+
+```{r}
+eps <- y - y_hat
+```
+
+
+Examine the assumptions of the Gauss-Markov Theorem.
+
+```{r}
+mean(eps)
+sd(eps)
+```
+
+
+
+

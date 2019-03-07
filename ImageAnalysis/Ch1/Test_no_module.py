@@ -5,9 +5,9 @@ import matplotlib.pyplot as plt
 import matplotlib.cm as cm
 from PIL import Image
 
-img = ndimage.imread('me.jpg', flatten = False)
+img = ndimage.imread('regs.png', flatten = False)
 #img = Image.open('me.jpg').convert('L')
-img = ndimage.interpolation.rotate(img, 270)
+#img = ndimage.interpolation.rotate(img, 270)
 
 plt.figure()
 
@@ -80,4 +80,4 @@ plt.imshow(img12, interpolation='nearest', cmap = "Greys_r", vmin = 0, vmax = 25
 # Note the 0 sigma for the last axis, we don't wan't to blurr the color planes together!
 #plt.imshow(img, interpolation='nearest', cmap = "Greys_r", vmin = 0, vmax = 255)
 plt.axis('off')
-plt.savefig("what.png", bbox_inches='tight',dpi = 600, pad_inches = 0.4)
+plt.savefig("regs_bw.png", bbox_inches='tight',dpi = 600, pad_inches = 0.4)

@@ -6,8 +6,8 @@ import matplotlib.cm as cm
 from scipy.ndimage import filters
 import matplotlib.gridspec as gridspec
 
-im = ndimage.imread('me.jpg', flatten = False)
-im = ndimage.interpolation.rotate(im, 270)
+im = ndimage.imread('regs.jpg', flatten = False)
+#im = ndimage.interpolation.rotate(im, 270)
 
 imx = np.zeros(im.shape,dtype=np.float64)
 filters.sobel(im,1,imx)

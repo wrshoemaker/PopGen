@@ -1,0 +1,199 @@
+Taxon Name	NCBI Taxonomy ID	Sporulation Gene Count	Synonymous Substution Rate (dS Sum)	Amino Acid Substitution Rate (Branch Length Sum)	Codon Bias Index	Spore-Forming?
+Acetobacterium woodii	931626	21	3.9145	1.247603	-0.019	N
+Acetohalobium arabaticum 	574087	61	2.7903	0.8761114	-0.015	Y
+Acidaminococcus fermentans 	591001	23	1.9173	0.9149548	-0.082	N
+Acidaminococcus intestini 	568816	17	2.1301	0.94472	0.003	N
+Aerococcus urinae 	866775	12	4.1413	1.527356	0.056	N
+Alicyclobacillus acidocaldarius 	1048834	66	2.3964	0.991772	-0.117	Y
+Alkaliphilus metalliredigens 	293826	69	3.2757	0.9759516	-0.016	Y
+Alkaliphilus oremlandii 	350688	60	3.1669	0.9395415	-0.001	Y
+Ammonifex degensii 	429009	57	2.1031	0.910149	-0.072	Y
+Amphibacillus xylanus 	698758	71	3.0206	1.010989	0.051	Y
+Anaerococcus prevotii 	525919	14	4.2796	1.533275	0.05	N
+Anoxybacillus flavithermus 	491915	96	2.8238	0.9114585	0.047	Y
+Bacillus amyloliquefaciens 	1155777	149	2.8695	0.9274456	-0.01	Y
+Bacillus cellulosilyticus 	649639	99	2.8571	0.913025	0.047	Y
+Bacillus clausii 	66692	92	2.8143	0.9542493	0.03	Y
+Bacillus coagulans 	345219	98	2.9329	0.9658208	-0.014	Y
+Bacillus halodurans 	272558	100	2.7323	0.8916327	0.013	Y
+Bacillus infantis 	1367477	119	2.9047	0.9088639	-0.023	Y
+Bacillus licheniformis 	766760	125	2.8697	0.916614	0.002	Y
+Bacillus megaterium 	592022	113	2.8275	0.9149597	0.074	Y
+Bacillus pseudofirmus 	398511	92	2.7044	0.8780862	0.051	Y
+Bacillus pumilus 	315750	134	2.8007	0.9111284	0.029	Y
+Bacillus selenitireducens 	439292	28	2.9984	1.000033	-0.036	N
+Bacillus sp. 1NLA3E	666686	115	2.9294	0.928941	0.046	Y
+Bacillus weihenstephanensis 	315730	115	2.9426	0.9717307	0.077	Y
+Brevibacillus brevis 	358681	103	2.0971	0.7792746	0.008	Y
+butyrate-producing bacterium SM4/1	245012	17	3.8133	1.233954	-0.108	N
+butyrate-producing bacterium SSC/2	245018	41	3.9945	1.337817	0.022	Y
+Butyrivibrio proteoclasticus 	515622	24	4.3124	1.46358	0.013	N
+Caldicellulosiruptor kronotskyensis 	632348	47	3.3995	1.058305	0.021	Y
+Caldicellulosiruptor saccharolyticus 	351627	49	3.3972	1.054635	0.02	Y
+Candidatus Arthromitus sp. SFB-mouse	1041809	47	3.9266	1.38218	-0.05	Y
+Candidatus Arthromitus sp. SFB-rat	1041504	45	3.9277	1.383599	-0.035	Y
+Candidatus Desulforudis audaxviator 	477974	62	1.8342	0.8343536	-0.092	Y
+Carboxydothermus hydrogenoformans	246194	57	2.3946	0.8501662	0.003	Y
+Carnobacterium maltaromaticum 	1234679	22	3.4517	1.23295	0.07	N
+Carnobacterium sp. WN1359	1266845	16	3.5317	1.260349	0.117	N
+Clostridiales genomosp. BVAB3	699246	8	4.485	1.509724	0.026	N
+Clostridium acetobutylicum 	863638	69	3.46	1.093323	0.011	Y
+Clostridium acidurici 	1128398	55	3.0458	0.9341478	0.029	Y
+Clostridium autoethanogenum 	1341692	71	3.4597	1.10551	0.02	Y
+Clostridium beijerinckii 	290402	67	3.4396	1.121312	0.005	Y
+Clostridium botulinum A	441770	63	3.335	1.090323	0.019	Y
+Clostridium botulinum B 	508765	65	3.2669	1.071616	0.018	Y
+Clostridium botulinum BKT015925	929506	60	3.2393	1.042507	0.028	Y
+Clostridium cellulolyticum 	394503	62	3.1915	0.9797052	0.008	Y
+Clostridium cellulovorans 	573061	64	3.4158	1.106471	0.041	Y
+Clostridium clariflavum 	720554	68	3.0403	0.8828559	-0.008	Y
+Clostridium kluyveri 	583346	62	3.5222	1.139954	-0.015	Y
+Clostridium lentocellum 	642492	56	3.593	1.126357	0.057	Y
+Clostridium novyi 	386415	61	3.2356	1.036736	0.047	Y
+Clostridium pasteurianum 	86416	63	3.3918	1.072935	0.004	Y
+Clostridium perfringens 	195103	61	3.2247	1.03464	0.032	Y
+Clostridium saccharobutylicum 	1345695	65	3.3245	1.087723	0.01	Y
+Clostridium saccharolyticum 	610130	57	3.7004	1.200143	-0.06	Y
+Clostridium saccharoperbutylacetonicum 	931276	66	3.4486	1.134961	0.011	Y
+Clostridium sp. SY8519	1042156	18	4.0909	1.368502	-0.09	N
+Clostridium stercorarium 	1121335	56	3.2221	0.969414	-0.02	Y
+Clostridium sticklandii	1511	23	3.4617	1.136181	0.047	N
+Clostridium tetani 	1231072	62	3.367	1.100997	0.02	Y
+Coprococcus catus 	717962	40	3.5896	1.193382	-0.051	Y
+Coprococcus sp. ART55/1	751585	36	4.1074	1.35534	-0.104	Y
+Dehalobacter sp. DCA	1147129	61	2.2815	0.8560057	-0.021	Y
+Desulfitobacterium dichloroeliminans 	871963	66	2.2552	0.8090517	0.003	Y
+Desulfitobacterium hafniense 	272564	65	2.1435	0.7954342	-0.044	Y
+Desulfosporosinus acidiphilus 	646529	69	2.3834	0.8406556	0.016	Y
+Desulfosporosinus meridiei 	768704	70	2.5243	0.8597193	0.014	Y
+Desulfosporosinus orientis 	768706	76	2.4829	0.8597512	0.002	Y
+Desulfotomaculum acetoxidans 	485916	68	2.1559	0.7829474	-0.002	Y
+Desulfotomaculum carboxydivorans 	868595	72	1.8925	0.7264239	-0.03	Y
+Desulfotomaculum gibsoniae 	767817	70	2.0399	0.8156094	-0.024	Y
+Desulfotomaculum kuznetsovii 	760568	70	1.6313	0.7031787	-0.066	Y
+Desulfotomaculum reducens 	349161	72	2.2111	0.8160992	0.008	Y
+Desulfotomaculum ruminis 	696281	79	2.0523	0.8041789	-0.064	Y
+Enterococcus casseliflavus 	565655	13	3.8023	1.364816	0.05	N
+Enterococcus faecium 	1305849	18	3.7535	1.335335	0.095	N
+Enterococcus hirae 	768486	15	3.7114	1.338765	0.093	N
+Enterococcus sp. 7L76	657310	13	3.6323	1.323588	0.069	N
+Erysipelothrix rhusiopathiae 	650150	13	4.2903	1.680941	0.076	N
+Ethanoligenens harbinense 	663278	55	4.0283	1.2623	-0.067	Y
+Eubacterium cylindroides 	717960	9	4.2911	1.614814	0.042	N
+Eubacterium eligens 	515620	48	3.9361	1.294238	-0.027	Y
+Eubacterium limosum 	903814	19	3.9698	1.199139	-0.049	N
+Eubacterium rectale 	657317	37	4.0509	1.343614	-0.072	Y
+Eubacterium siraeum 	657319	38	4.5565	1.457888	0.005	Y
+Exiguobacterium antarcticum 	1087448	24	2.8553	1.025497	0.019	N
+Exiguobacterium sp. AT1b	360911	30	2.7349	0.992931	0.028	N
+Exiguobacterium sp. MH3	1399115	29	2.8153	1.011466	0.052	N
+Faecalibacterium prausnitzii L2-6	718252	35	4.3933	1.521284	-0.072	N
+Faecalibacterium prausnitzii SL3/3	657322	35	4.406	1.525186	-0.078	N
+Filifactor alocis 	546269	12	3.9344	1.301358	0.011	N
+Finegoldia magna 	334413	11	3.9104	1.369348	0.093	N
+Geobacillus sp. JF8	1345697	107	3.0829	0.9759489	-0.046	Y
+Geobacillus sp. Y4.1MC1	581103	107	2.8918	0.9193366	0.002	Y
+Halanaerobium hydrogeniformans	656519	24	3.1598	1.071539	0.047	N
+Halanaerobium praevalens 	572479	22	3.2108	1.096288	0.082	N
+Halobacillus halophilus 	866895	96	3.0268	0.9843232	0.046	Y
+Halobacteroides halobius 	748449	66	2.919	0.9182331	0.038	Y
+Halothermothrix orenii 	373903	61	2.8671	0.8971247	-0.014	Y
+Heliobacterium modesticaldum 	498761	72	1.5236	0.6754559	-0.047	Y
+Kyrpidia tusciae 	562970	83	2.1274	0.8373644	-0.13	Y
+Lachnoclostridium phytofermentans 	357809	51	3.7543	1.191381	0.025	Y
+Lactobacillus brevis 	1001583	18	4.2297	1.543795	-0.018	N
+Lactobacillus buchneri 	511437	14	4.3477	1.626366	0.008	N
+Lactobacillus casei 	321967	16	4.317	1.561827	0.01	N
+Lactobacillus crispatus 	748671	16	4.603	1.791786	0.101	N
+Lactobacillus delbrueckii 	390333	12	5.0913	1.897164	0.036	N
+Lactobacillus fermentum 	712938	11	4.6542	1.652975	0.013	N
+Lactobacillus helveticus 	326425	14	4.6862	1.812257	0.125	N
+Lactobacillus johnsonii 	633699	11	4.4304	1.736926	0.107	N
+Lactobacillus kefiranofaciens 	1033837	10	4.7071	1.818534	0.083	N
+Lactobacillus plantarum 	1284663	15	4.1493	1.520094	0.006	N
+Lactobacillus reuteri 	491077	14	4.2316	1.601111	0.082	N
+Lactobacillus ruminis 	1069534	15	4.2035	1.509955	0.046	N
+Lactobacillus sakei 	314315	14	3.9323	1.462558	0.071	N
+Lactobacillus salivarius 	362948	17	3.9973	1.490825	0.106	N
+Lactobacillus sanfranciscensis 	714313	13	4.505	1.765441	0.12	N
+Lactococcus garvieae 	420890	13	4.3113	1.64977	0.122	N
+Lactococcus lactis 	272622	14	4.2638	1.656161	0.114	N
+Leuconostoc carnosum 	1229758	10	4.8321	1.893337	0.062	N
+Leuconostoc citreum 	349519	14	4.9676	1.932296	0.046	N
+Leuconostoc gasicomitatum 	762550	11	4.9464	1.922851	0.049	N
+Leuconostoc mesenteroides 	1107880	14	4.7466	1.846393	0.062	N
+Leuconostoc sp. C2	979982	13	4.9665	1.924111	0.049	N
+Listeria monocytogenes 	1234142	20	3.1526	1.066347	0.114	N
+Lysinibacillus sphaericus 	444177	69	3.0137	1.019995	0.043	Y
+Macrococcus caseolyticus 	458233	17	3.5113	1.245555	0.047	N
+Mahella australiensis 	697281	60	3.3387	0.9438236	-0.053	Y
+Megamonas hypermegale 	657316	11	2.5818	0.8530848	0.175	N
+Megasphaera elsdenii 	1064535	18	2.0681	0.9684697	-0.006	N
+Melissococcus plutonius 	940190	16	3.798	1.406262	0.055	N
+Moorella thermoacetica 	264732	68	1.6395	0.7230669	-0.07	Y
+Oceanobacillus iheyensis 	221109	88	3.0166	1.003625	0.052	Y
+Oenococcus oeni 	203123	18	5.2857	2.090972	0.047	N
+Oscillibacter valericigenes 	693746	49	4.103	1.322473	-0.093	Y
+Paenibacillus mucilaginosus	1036673	103	1.9853	0.813498	-0.114	Y
+Paenibacillus polymyxa 	886882	90	2.423	0.8889302	-0.007	Y
+Paenibacillus sp. JDR-2	324057	103	2.1942	0.8741458	-0.024	Y
+Paenibacillus sp. Y412MC10	481743	99	2.2029	0.8782998	-0.069	Y
+Pediococcus claussenii 	701521	11	4.2616	1.600786	0.047	N
+Pediococcus pentosaceus 	1408206	11	4.1901	1.591189	0.099	N
+Pelotomaculum thermopropionicum 	370438	69	1.6652	0.6933542	-0.064	Y
+Peptoclostridium difficile 	645463	56	3.1863	1.02116	0.037	Y
+Roseburia hominis 	585394	57	3.9452	1.296358	-0.119	Y
+Roseburia intestinalis 	718255	48	3.965	1.308574	-0.056	Y
+Ruminiclostridium thermocellum 	637887	70	3.0373	0.8798443	-0.017	Y
+Ruminococcus albus 	697329	47	4.5671	1.490523	0.028	Y
+Ruminococcus bromii 	657321	30	4.6275	1.42373	0.061	Y
+Ruminococcus champanellensis 	213810	49	4.4299	1.459765	-0.12	Y
+Ruminococcus obeum 	657314	45	3.8606	1.300963	0.011	Y
+Ruminococcus sp. SR1/5	657323	42	3.8868	1.316316	-0.012	Y
+Ruminococcus torques 	657313	45	3.7785	1.257991	-0.014	Y
+Selenomonas ruminantium 	927704	24	1.8675	0.8520827	-0.074	N
+Selenomonas sputigena 	546271	23	2.0835	0.8733869	-0.08	N
+Solibacillus silvestris 	1002809	63	3.0179	1.028267	0.049	Y
+Staphylococcus aureus 	451516	12	3.7611	1.370094	0.082	N
+Staphylococcus carnosus 	396513	15	3.5622	1.304439	0.131	N
+Staphylococcus epidermidis 	176280	14	3.8045	1.360324	0.094	N
+Staphylococcus haemolyticus 	279808	15	3.7276	1.344419	0.108	N
+Staphylococcus lugdunensis 	1034809	18	3.7992	1.367756	0.072	N
+Staphylococcus pseudintermedius 	984892	17	3.5041	1.267756	0.068	N
+Staphylococcus saprophyticus 	342451	16	3.6457	1.325049	0.087	N
+Staphylococcus warneri 	1194526	15	3.7308	1.342336	0.106	N
+Streptococcus agalactiae 	1231389	14	4.4636	1.701923	0.121	N
+Streptococcus equi 	1051072	13	4.6723	1.747803	0.003	N
+Streptococcus gordonii 	467705	14	4.4713	1.671319	0.082	N
+Streptococcus iniae 	1318633	13	4.5763	1.746269	0.114	N
+Streptococcus intermedius 	862966	15	4.4938	1.682787	0.071	N
+Streptococcus macedonicus 	1116231	14	4.3203	1.659099	0.157	N
+Streptococcus mutans 	1198676	12	4.3048	1.649757	0.089	N
+Streptococcus oligofermentans 	1302863	14	4.4675	1.669378	0.053	N
+Streptococcus parasanguinis 	1114965	15	4.5089	1.694314	0.085	N
+Streptococcus parauberis 	936154	14	4.671	1.765652	0.126	N
+Streptococcus pneumoniae 	869269	13	4.4406	1.685568	0.112	N
+Streptococcus pyogenes 	160490	12	4.5456	1.733771	0.112	N
+Streptococcus sp. I-G2	1156431	14	4.5092	1.694719	0.091	N
+Streptococcus suis 	391295	15	4.3846	1.661892	0.079	N
+Streptococcus thermophilus 	1051074	15	4.3702	1.671672	0.137	N
+Streptococcus uberis 	218495	12	4.6683	1.758639	0.11	N
+Sulfobacillus acidophilus 	1051632	57	2.3379	1.065782	-0.13	Y
+Symbiobacterium thermophilum 	292459	64	0.8014	0.5920567	-0.18	Y
+Syntrophobotulus glycolicus 	645991	65	2.3435	0.8830422	-0.049	Y
+Syntrophomonas wolfei 	335541	61	2.5542	0.9952348	-0.03	Y
+Syntrophothermus lipocalidus 	643648	55	2.3327	0.8761851	-0.012	Y
+Tepidanaerobacter acetatoxydans 	1209989	61	2.8478	0.8491253	0.011	Y
+Tetragenococcus halophilus 	945021	12	3.9877	1.476744	0.085	N
+Thermacetogenium phaeum 	1089553	56	2.029	0.8307973	-0.069	Y
+Thermaerobacter marianensis 	644966	52	0.9664	0.7418674	-0.183	Y
+Thermincola potens 	635013	73	1.8154	0.5874401	-0.008	Y
+Thermoanaerobacter italicus 	580331	65	2.9649	0.8429773	0.043	Y
+Thermoanaerobacter tengcongensis 	273068	63	3.0938	0.8735496	0.015	Y
+Thermoanaerobacterium saccharolyticum 	1094508	62	3.0613	0.8771747	0	Y
+Thermoanaerobacterium thermosaccharolyticum 	698948	60	3.0336	0.8716049	-0.006	Y
+Thermobacillus composti 	717605	89	2.1847	0.9221745	-0.095	Y
+Thermosediminibacter oceani 	555079	61	2.803	0.7843248	-0.027	Y
+Veillonella parvula 	479436	13	2.7648	1.001238	0.162	N
+Weissella koreensis 	1045854	14	4.5914	1.795719	0.052	N
+						

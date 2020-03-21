@@ -11,3 +11,6 @@ samtools bam2fq input.bam > output.fastq
 
 # fastq ==> fasta
 cat test.fastq | paste - - - - | sed 's/^@/>/g'| cut -f1-2 | tr '\t' '\n' > test.fasta
+
+# get files from cgb
+wget --user=JayLennon --password=pZ3S2a33 https://lims.cgb.indiana.edu/outbox/LennonLab/<rest-of-link>

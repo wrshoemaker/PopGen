@@ -1,0 +1,49 @@
+initialize() {
+
+	//=========================
+	initializeTreeSeq(); //turn on tree sequence recording
+	initializeMutationRate(3e-9);//initialize mutation rate
+
+	//=========================
+	//set up mutation types
+	// m1 mutation type: deleterious
+	initializeMutationType("m1", 0.5, "f", -0.001);
+
+
+	//=========================
+	//sets up the genomic element regions
+
+	initializeGenomicElementType("g1", m1, 1.0 );
+	initializeGenomicElement(g1, 0, 49999);//gene that is 50kb long
+	defineConstant("C", 50); //number of loci
+	defineConstant("W", 1000); //locus size
+
+	// Recombination map for loci
+	rates = c(rep(c(0.5, 0), C));
+	ends = NULL;
+	pos = 0;
+	for (i in 1:C)	{
+		ends = c(ends, pos, pos + W-1);
+		pos = pos + W;
+	}
+	initializeRecombinationRate(rates, ends);
+}
+
+//initial ancestral population
+//the first number in these blocks determines what generation the code executes
+1 {
+	sim.addSubpop("p1", 10000);
+}
+//first split at generation 200000
+200000 {
+	sim.addSubpopSplit("p2", 10000, p1);
+}
+//second split at generation 200100
+200100 {
+	sim.addSubpopSplit("p3", 400, p2);
+}
+
+202100 late() {
+	sim.treeSeqOutput("slim_study/outputs/F_s6_b1/F_s6_b1_1.txt");//outputfile path
+
+}

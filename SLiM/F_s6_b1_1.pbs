@@ -1,0 +1,10 @@
+#!/bin/bash
+
+#PBS -m abe
+#PBS -M mhibbins@iu.edu
+#PBS -l walltime=45:00:00,vmem=8GB,nodes=1:ppn=1
+#PBS -N slim_F_s6_b1_1
+#PBS -e /N/dc2/scratch/mhibbins/outputs
+#PBS -o /N/dc2/scratch/mhibbins/outputs
+cd /N/dc2/scratch/mhibbins/selection_genetrees/
+build/slim slim_study/recipes/F_s6_b1/F_s6_b1_1.slim  

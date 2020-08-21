@@ -46,7 +46,7 @@ ax2 = plt.subplot2grid((2, 1), (1, 0), colspan=1)
 
 ax2.scatter(df_spo0a.days.values, df_spo0a.N_veg.values, alpha = 0.5, c ='#175ac6', label = 'Vegetative')
 
-ax2.set_title(r'$\mathit{B. \,subtilis} \; \mathrm{str. \,168} \; \Delta \mathrm{spo0A}$',fontsize = 14)
+ax2.set_title(r'$\mathit{B. \,subtilis} \; \Delta \mathrm{spo0A}$',fontsize = 14)
 
 ax2.set_ylim([0.8, 4000000000])
 ax2.set_yscale('log', basey=10)
